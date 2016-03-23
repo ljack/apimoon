@@ -10,4 +10,5 @@ API gateway/proxy. Register your API endpoint, configure access and publish it t
 
 
 # Read the highlevel doc
-<iframe src="https://docs.google.com/document/d/141UD-nxg2nxL-dxCG0ijBgZZAyBXhQw5vrSPhPz5o1E/pub?embedded=true"></iframe>
+ https://docs.google.com/document/d/141UD-nxg2nxL-dxCG0ijBgZZAyBXhQw5vrSPhPz5o1E/pub
+ (coming to MD format soon)
