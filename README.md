@@ -8,9 +8,6 @@ API gateway/proxy. Register your API endpoint, configure access and publish it t
 - Provides JSON through HTTP
 - Also implements GraphQL Server / Client
 
-# Ideas
-- 
 
-
-Similar products
--
+# Read the highlevel doc
+<iframe src="https://docs.google.com/document/d/141UD-nxg2nxL-dxCG0ijBgZZAyBXhQw5vrSPhPz5o1E/pub?embedded=true"></iframe>
