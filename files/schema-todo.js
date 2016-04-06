@@ -13,10 +13,11 @@ from "/lib/collections/todos.js";
 
 // Import with  import FormSchema from "schema-apimoon.js";
 export default function() {
-  console.log("inside default function this=", this);
-  var users = Meteor.users.find().fetch();
+  
+  // this is like join field sharedTo: "users.profile.name" of type array in collection todos
+  // displayHelper is in columns-todo.jsx
   var values = {};
-  users.map((user) => {
+  Meteor.users.find().fetch().map((user) => {
     values[user._id] = user.profile.name;
   });
 
