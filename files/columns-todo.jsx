@@ -18,8 +18,9 @@ const LookupComponent = React.createClass({
     console.log("Here we go again!",schema.meta.props);
 
     let foreingInfo = schema.meta.props[columnName];
-    
+    let foreingColl = foreingInfo.meta.type.displayName;
     console.log("foreingInfo=",foreingInfo);
+    console.log("foreingColl=",foreingColl);
 
     return (
       <span>
