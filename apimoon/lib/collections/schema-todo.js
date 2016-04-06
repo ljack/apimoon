@@ -21,7 +21,11 @@ export default function() {
     values[user._id] = user.profile.name;
   });
 
-  var User=t.Object("User");
+  var User=t.struct({
+    profile: t.struct({
+      name: t.String,
+    })
+  },"User");
   var Users = t.enums(values, "Users");
   
    
