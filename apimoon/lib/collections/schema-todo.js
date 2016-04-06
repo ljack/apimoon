@@ -12,7 +12,7 @@ import {Todos as MyCollection } from "/lib/collections/todos.js";
 export default function() {
   console.log("inside default function this=",this );
   var Users = t.enums.of([]);
-  Meteor.call( getUsers, {} , (err,res) => {
+  Meteor.call( "getUsers", {} , (err,res) => {
     console.log("err=",err," res=",res);
     if( err ) {
       
