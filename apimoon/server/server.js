@@ -6,7 +6,7 @@ import { Apimoons } from "/lib/collections/apimoons.js";
 
 Meteor.methods({
 	"getUsers"(){
-		var users = Meteor.users.find( {}, {fields: { username:1} } );
+		var users = Meteor.users.find( {}, {fields: { username:1} } ).fetch();
 		console.log("getUsers users=",users);
 		return users;
 	}	
