@@ -16,9 +16,11 @@ export default function() {
   console.log("inside default function this=", this);
   var users = Meteor.users.find().fetch();
   var array = users.map((user) => {
-    return user.profile.name
+    let id = user._id;
+    return {  value: id, text: user.profile.name };
+    
   });
-  var Users = t.enums.of(array);
+  var Users = t.enums(array);
   console.log("array=", array);
 
 
