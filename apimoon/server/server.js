@@ -5,7 +5,7 @@ from "meteor-user-roles";
 import { Apimoons } from "/lib/collections/apimoons.js";
 
 Meteor.methods({
-	getUsers() {
+	"getUsers"(){
 		var users = Meteor.users.find( {}, {fields: { username:1} } );
 		console.log("getUsers users=",users);
 		return users;
