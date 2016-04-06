@@ -163,7 +163,7 @@ export const ApimoonsPageView = React.createClass({
 			
 				render() {
 					// console.log("FormSchema=",FormrmSchema() );
-					console.log( "render="+JSON.stringify(FormSchema));
+					console.log( "render="+FormSchema);
 					
 					// t.update(FormSchema, {"sharedTo": { $set: ["jarkko","tester"] }} );
 					return (
