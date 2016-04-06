@@ -16,7 +16,7 @@ export default function() {
   console.log("inside default function this=", this);
   var users = Meteor.users.find().fetch();
   var array = users.map((user) => {
-    let id = user._id;
+    let id = user.profile.name;
     let ret = {};
     ret[id] = user.profile.name;
     return ret;
@@ -25,10 +25,7 @@ export default function() {
     
     
   // var Users = t.enums(array, "Users");
-const Users = t.enums({
-  M: 'Male',
-  F: 'Female'
-});
+
 
 
 
