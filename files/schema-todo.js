@@ -10,7 +10,7 @@ from "/lib/collections/todos.js";
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md
 
 
-var Users = t.enums.of( Meteor.users.find( {}).fetch() );
+var Users = t.enums.of( [ "jarkko","tester"] );
 
 const Schema = t.struct({
   _id: t.maybe( t.String ),
