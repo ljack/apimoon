@@ -97,6 +97,7 @@ export const FreeLayout = React.createClass({
 		<div id="footer" className="sticky-footer">
 			<div className="footer-container container">
 				<p className="text-muted">
+					https://github.com/ljack/apimoon https://github.com/ljack/kitchen-templates/
 				</p>
 			</div>
 		</div>
@@ -180,6 +181,7 @@ export const PublicLayout = React.createClass({
 		<div id="footer" className="sticky-footer">
 			<div className="footer-container container">
 				<p className="text-muted">
+					https://github.com/ljack/apimoon https://github.com/ljack/kitchen-templates/
 				</p>
 			</div>
 		</div>
@@ -300,6 +302,7 @@ export const PrivateLayout = React.createClass({
 		<div id="footer" className="sticky-footer">
 			<div className="footer-container container">
 				<p className="text-muted">
+					https://github.com/ljack/apimoon https://github.com/ljack/kitchen-templates/
 				</p>
 			</div>
 		</div>
