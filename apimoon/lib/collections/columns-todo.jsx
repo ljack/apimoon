@@ -18,14 +18,19 @@ const LookupComponent = React.createClass({
     console.log("Here we go again!",schema.meta.props);
 
     let foreingInfo = schema.meta.props[columnName];
-    let foreingColl = foreingInfo.meta.type.displayName;
     console.log("foreingInfo=",foreingInfo);
-    console.log("foreingColl=",foreingColl);
-
+    // filled by FormSchema() call, maybe parametrisize it
+    let foreingMap = foreingInfo.meta.type.meta.map;
+    let result="";
+    for(let id in ids ) {
+      result += foreingMap[id];
+      result += " "
+    }
+    
     return (
       <span>
-  		{this.props.data.toString()}
-	</span>
+  		{result}
+	    </span>
     );
   }
 });

@@ -22,8 +22,8 @@ const LookupComponent = React.createClass({
     // filled by FormSchema() call, maybe parametrisize it
     let foreingMap = foreingInfo.meta.type.meta.map;
     let result="";
-    for(let id in ids ) {
-      result += foreingMap[id];
+    for(let index in ids ) {
+      result += foreingMap[ids[index]];
       result += " "
     }
     
