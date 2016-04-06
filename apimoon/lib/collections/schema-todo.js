@@ -20,8 +20,10 @@ export default function() {
     return {  value: id, text: user.profile.name };
     
   });
-  var Users = t.enums(array);
   console.log("array=", array);
+    
+  var Users = t.enums(array);
+
 
 
 
