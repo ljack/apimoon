@@ -21,14 +21,14 @@ export default function() {
     values[user._id] = user.profile.name;
   });
 
-  var User=t.object();
+  var User=t.Object("User");
   var Users = t.enums(values, "Users");
   
    
   var Schema = t.struct({
     _id: t.maybe(t.String),
     name: t.String, // a required string
-    owner: User,
+    owner: t.maybe(User),
     sharedTo: t.list(Users),
     done: t.Boolean
 
