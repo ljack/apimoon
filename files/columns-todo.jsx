@@ -16,7 +16,7 @@ const LookupComponent = React.createClass({
     let rowData = this.props.rowData; // this is json of the row
     let schema= FormSchema();
     
-    console.log("Here we go again!");
+    console.log("Here we go again!"+schema.meta.props);
     return (
       <span>
   		{this.props.data.toString()}
