@@ -23,7 +23,12 @@ export default function() {
   });
   console.log("array=", array);
     
-  var Users = t.enums(array, "Users");
+    
+  // var Users = t.enums(array, "Users");
+const Users = t.enums({
+  M: 'Male',
+  F: 'Female'
+});
 
 
 
