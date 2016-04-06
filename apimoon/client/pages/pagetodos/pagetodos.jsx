@@ -163,7 +163,8 @@ export const PagetodosView = React.createClass({
 			
 				render() {
 					// console.log("FormSchema=",FormrmSchema() );
-					console.log( "render=",JSON.stringify(JSON.parse(JSON.stringify(FormSchema));));
+					console.log( "render=",JSON.parse(JSON.stringify(FormSchema)));
+					
 					// t.update(FormSchema, {"sharedTo": { $set: ["jarkko","tester"] }} );
 					return (
 	<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}>
