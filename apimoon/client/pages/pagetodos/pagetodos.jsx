@@ -160,8 +160,9 @@ export const PagetodosView = React.createClass({
 					}
 
 				},
+			
 				render() {
-
+						console.log("FormSchema=",FormSchema);
 
 					return (
 	<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}>
