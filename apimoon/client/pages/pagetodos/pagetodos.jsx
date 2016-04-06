@@ -162,16 +162,13 @@ export const PagetodosView = React.createClass({
 				},
 			
 				render() {
-					// console.log("FormSchema=",FormrmSchema() );
-					t.update( FormSchema, {
-  name: { $set: 'Guido' }
-});
-					
-					// t.update(FormSchema, {"sharedTo": { $set: ["jarkko","tester"] }} );
+				
+					const fs = FormSchema();
+					console.log( "fs=",fs);
 					return (
 	<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}>
 		<form onSubmit={this.onSubmit}>
-			<t.form.Form ref="form" type={FormSchema} options={FormOptions} value={json} />
+			<t.form.Form ref="form" type={fs} options={FormOptions} value={json} />
 			<div className="form-group">
 				<button type="submit" className="btn btn-primary">
 					Save
