@@ -9,6 +9,7 @@ Examples for two collections apimoon and todos.
 2. [files/schema-apimoon.js](files/schema-apimoon.js)    tcomb schema used in data_view.jsx
 3. [files/columns-todo.jsx](files/columns-todo.jsx)     "configuration" file for data_view.jsx
 4. [files/schema-todo.js](files/schema-todo.js)       tcomb schema used in data_view.jsx
+
 # Other used files
 1. [files/griddle.css](files/griddle.css)          Modified griddle css to allow table-hover and table-striped to work, used in data_view.jsx
 2. [files/client.js](files/client.js)            Shows an example how to import collection js usable in client
