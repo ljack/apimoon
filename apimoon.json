@@ -1959,7 +1959,7 @@
 			},
 			{
 				"source": "files/joins.js",
-				"dest": "lib/joins/joins.js"
+				"dest": "OUTPUT_DIR/lib/joins/joins.js"
 			}
 		],
 		"use_collection2": true,
