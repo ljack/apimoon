@@ -5,6 +5,7 @@ from "meteor-user-roles";
 import { Apimoons } from "/lib/collections/apimoons.js";
 
 Meteor.publish("users", () => {
+	console.log("in publish users");
 	return Meteor.users.find( {}, {fields: {"profile.name":1} });
 });
 
