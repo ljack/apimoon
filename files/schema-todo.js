@@ -22,7 +22,7 @@ export default function() {
   console.log("array=", array);
     
     
- var Users = t.enums(array, "Users");
+ var Users = t.enums([{ abba: "jarkko" }], "Users");
 
 
 
