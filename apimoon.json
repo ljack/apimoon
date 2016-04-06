@@ -305,12 +305,7 @@
 				"find_one": false,
 				"filter": {},
 				"options": {},
-				"related_queries": [
-					{
-						"name": "users",
-						"params": []
-					}
-				]
+				"related_queries": []
 			},
 			{
 				"name": "todo",

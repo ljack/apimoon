@@ -8,6 +8,18 @@ import {Register} from "/client/pages/register/register.jsx";
 import {ForgotPassword} from "/client/pages/forgot_password/forgot_password.jsx";
 import {ResetPassword} from "/client/pages/reset_password/reset_password.jsx";
 import {Pagetodos} from "/client/pages/pagetodos/pagetodos.jsx";
+import {PagetodosInsert} from "/client/pages/pagetodos/insert/insert.jsx";
+import {PagetodosDetails} from "/client/pages/pagetodos/details/details.jsx";
+import {PagetodosEdit} from "/client/pages/pagetodos/edit/edit.jsx";
+import {HomePrivate} from "/client/pages/home_private/home_private.jsx";
+import {ApimoonsPage} from "/client/pages/apimoons_page/apimoons_page.jsx";
+import {ApimoonsPageInsert} from "/client/pages/apimoons_page/insert/insert.jsx";
+import {ApimoonsPageDetails} from "/client/pages/apimoons_page/details/details.jsx";
+import {ApimoonsPageEdit} from "/client/pages/apimoons_page/edit/edit.jsx";
+import {UserSettings} from "/client/pages/user_settings/user_settings.jsx";
+import {UserSettingsProfile} from "/client/pages/user_settings/profile/profile.jsx";
+import {UserSettingsChangePass} from "/client/pages/user_settings/change_pass/change_pass.jsx";
+import {Logout} from "/client/pages/logout/logout.jsx";
 /*IMPORTS*/
 
 Tracker.autorun(function() {
@@ -317,6 +329,289 @@ privateRoutes.route("/pagetodos", {
     	mount(Layout, {
 			content: (
 				<Pagetodos />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pagetodos/insert", {
+    name: "pagetodos.insert",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PagetodosInsert />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pagetodos/details/:todoId", {
+    name: "pagetodos.details",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PagetodosDetails />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pagetodos/edit/:todoId", {
+    name: "pagetodos.edit",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PagetodosEdit />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/home_private", {
+    name: "home_private",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<HomePrivate />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/apimoons_page", {
+    name: "apimoons_page",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<ApimoonsPage />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/apimoons_page/insert", {
+    name: "apimoons_page.insert",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<ApimoonsPageInsert />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/apimoons_page/details/:apimoonId", {
+    name: "apimoons_page.details",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<ApimoonsPageDetails />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/apimoons_page/edit/:apimoonId", {
+    name: "apimoons_page.edit",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<ApimoonsPageEdit />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/user_settings", {
+    name: "user_settings",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			FlowRouter.withReplaceState(function() {
+				redirect("user_settings.profile");
+			});
+
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<UserSettings />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/user_settings/profile", {
+    name: "user_settings.profile",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<UserSettings subcontent={
+					<UserSettingsProfile />
+				} />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/user_settings/change_pass", {
+    name: "user_settings.change_pass",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<UserSettings subcontent={
+					<UserSettingsChangePass />
+				} />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/logout", {
+    name: "logout",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<Logout />
 			)
 		});
 

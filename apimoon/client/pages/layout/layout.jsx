@@ -2,7 +2,7 @@ import React from "react";
 import {pathFor, menuItemClass} from "/client/lib/router_utils";
 import {Loading} from "/client/pages/loading/loading.jsx";
 import {userEmail, userFullName} from "/client/lib/account_utils";
-/*IMPORTS*/
+
 
 export const Layout = React.createClass({
 	mixins: [
