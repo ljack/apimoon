@@ -13,7 +13,7 @@ const LookupComponent = React.createClass({
   render: function() {
     let ids = this.props.data;
     if( ids == null || ids == undefined) {
-      return ("N/A");
+      return (<span>No data</span>);
     }
     let columnName = this.props.metadata.columnName; // e.g. sharedTo
     let rowData = this.props.rowData; // this is json of the row
