@@ -2,10 +2,15 @@ import {
 	Users
 }
 from "meteor-user-roles";
-import {
-	Apimoons
-}
-from "/lib/collections/apimoons.js";
+import { Apimoons } from "/lib/collections/apimoons.js";
+
+Meteor.methods({
+	getUsers() {
+		var users = Meteor.users.find( {}, {fields: { username:1} } );
+		console.log("getUsers users=",users);
+		return users;
+	}	
+});
 
 Meteor.startup(function() {
 	// read environment variables from Meteor.settings
