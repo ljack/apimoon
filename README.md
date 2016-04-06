@@ -2,8 +2,9 @@
 
 Files of interest:
 [apimoon.json](apimoon.json)               MeteorKitchen Application JSON for Apimoon 
-# Files that are needed to be generated somewho 
+#Files that are needed to be generated  
 Examples for two collections apimoon and todos.
+
 1. [files/columns-apimoon.jsx](files/columns-apimoon.jsx)  "configuration" file for data_view.jsx
 2. [files/schema-apimoon.js](files/schema-apimoon.js)    tcomb schema used in data_view.jsx
 3. [files/columns-todo.jsx](files/columns-todo.jsx)     "configuration" file for data_view.jsx
