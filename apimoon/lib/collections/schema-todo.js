@@ -10,10 +10,10 @@ from "/lib/collections/todos.js";
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md
 
 
-var Users = function() {
+var Users = (function() {
   console.log("Usrs function running...");
   return t.enums.of( [ "jarkko","tester"] );
-};
+});
 const Schema = t.struct({
   _id: t.maybe( t.String ),
   name: t.String, // a required string
