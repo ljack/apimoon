@@ -15,14 +15,15 @@ from "/lib/collections/todos.js";
 export default function() {
   console.log("inside default function this=", this);
   var users = Meteor.users.find().fetch();
-  var array = users.map((user) => {
-    //return { [user._id]: user.profile.name };
-    return { abba: "jarkko"  };
+  var values = {};
+  users.map((user) => {
+    values[user._id]=user.profile.name;
   });
-  console.log("array=", array);
+  
+  console.log("values:",values);
     
     
- var Users = t.enums([{ abba: "jarkko" }], "Users");
+ var Users = t.enums(values, "Users");
 
 
 
