@@ -100,7 +100,12 @@ export const FreeLayout = React.createClass({
 					<a href="https://github.com/ljack/apimoon">
 						https://github.com/ljack/apimoon
 					</a>
-					https://github.com/ljack/kitchen-templates/
+					<nbsp />
+					<nbsp />
+					<nbsp />
+					<a href="https://github.com/ljack/kitchen-templates/">
+						https://github.com/ljack/kitchen-templates/
+					</a>
 				</p>
 			</div>
 		</div>
@@ -186,8 +191,9 @@ export const PublicLayout = React.createClass({
 				<p className="text-muted">
 					<a href="https://github.com/ljack/apimoon">
 						https://github.com/ljack/apimoon
+					</a> <a href="https://github.com/ljack/kitchen-templates/">
+						https://github.com/ljack/kitchen-templates/
 					</a>
-					https://github.com/ljack/kitchen-templates/
 				</p>
 			</div>
 		</div>
@@ -308,7 +314,7 @@ export const PrivateLayout = React.createClass({
 		<div id="footer" className="sticky-footer">
 			<div className="footer-container container">
 				<p className="text-muted">
-					<a href="https://github.com/ljack/apimoon">https://github.com/ljack/apimoon</a> https://github.com/ljack/kitchen-templates/
+					<a href="https://github.com/ljack/apimoon">https://github.com/ljack/apimoon</a><nbsp/><nbsp/><nbsp/><a href="https://github.com/ljack/kitchen-templates/">https://github.com/ljack/kitchen-templates/</a>
 				</p>
 			</div>
 		</div>
