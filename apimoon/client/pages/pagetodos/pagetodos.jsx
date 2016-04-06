@@ -21,7 +21,8 @@ export const Pagetodos = React.createClass({
 		
 
 		var subs = [
-			Meteor.subscribe("todos")
+			Meteor.subscribe("todos"),
+			Meteor.subscribe("users")
 		];
 		var ready = true;
 		_.each(subs, function(sub) {

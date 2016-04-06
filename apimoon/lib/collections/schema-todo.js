@@ -1,5 +1,8 @@
 import t from 'tcomb-form'
-import {Todos as MyCollection } from "/lib/collections/todos.js";
+import {
+  Todos as MyCollection
+}
+from "/lib/collections/todos.js";
 // this file should be generated from the application JSON
 
 // see server.js for a example Apimoons.insert clauses which should match with this schema
@@ -10,12 +13,15 @@ import {Todos as MyCollection } from "/lib/collections/todos.js";
 
 // Import with  import FormSchema from "schema-apimoon.js";
 export default function() {
-  console.log("inside default function this=",this );
-  var array = Meteor.users.find( ).fetch();
+  console.log("inside default function this=", this);
+  var users = Meteor.users.find().fetch();
+  var array = users.map((user) => {
+    return user.profile.name
+  });
   var Users = t.enums.of(array);
-  console.log("array=",array);
-  
-  
+  console.log("array=", array);
+
+
 
   var Schema = t.struct({
     _id: t.maybe(t.String),
@@ -25,6 +31,6 @@ export default function() {
     done: t.Boolean
 
   });
-  console.log( JSON.stringify((Schema)));
+
   return Schema;
 }
