@@ -12,6 +12,9 @@ const TableColumns = ["name", "done", "owner", "sharedTo", "rowButtons"];
 const LookupComponent = React.createClass({
   render: function() {
     let ids = this.props.data;
+    if( ids == null || ids == undefined) {
+      return ("");
+    }
     let columnName = this.props.metadata.columnName; // e.g. sharedTo
     let rowData = this.props.rowData; // this is json of the row
     let schema= FormSchema();

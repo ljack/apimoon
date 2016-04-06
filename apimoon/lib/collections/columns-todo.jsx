@@ -175,6 +175,9 @@ const ColumnMeta = [{
     "columnName": "done",
     "customComponent": BooleanComponent
   }, {
+    "columnName": "owner",
+    "customComponent": LookupComponent
+  }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent
   }, {
