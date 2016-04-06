@@ -17,16 +17,10 @@ export default function() {
   var users = Meteor.users.find().fetch();
   var values = {};
   users.map((user) => {
-    values[user._id]=user.profile.name;
+    values[user._id] = user.profile.name;
   });
-  
-  console.log("values:",values);
-    
-    
- var Users = t.enums(values, "Users");
 
-
-
+  var Users = t.enums(values, "Users");
 
 
   var Schema = t.struct({
