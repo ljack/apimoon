@@ -1956,6 +1956,10 @@
 			{
 				"source": "files/griddle.css",
 				"dest": "CLIENT_STYLES_DIR/griddle.css"
+			},
+			{
+				"source": "files/joins.js",
+				"dest": "BOTH_LIB_DIR/joins/joins.js"
 			}
 		],
 		"use_collection2": true,
