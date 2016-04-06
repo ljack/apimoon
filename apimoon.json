@@ -305,7 +305,12 @@
 				"find_one": false,
 				"filter": {},
 				"options": {},
-				"related_queries": []
+				"related_queries": [
+					{
+						"name": "users",
+						"params": []
+					}
+				]
 			},
 			{
 				"name": "todo",
@@ -362,6 +367,14 @@
 				"filter": {
 					"_id": null
 				},
+				"options": {},
+				"related_queries": []
+			},
+			{
+				"name": "users",
+				"collection": "users",
+				"find_one": false,
+				"filter": {},
 				"options": {},
 				"related_queries": []
 			}

@@ -2,6 +2,7 @@ import React from "react";
 import {pathFor, menuItemClass} from "/client/lib/router_utils";
 import {Loading} from "/client/pages/loading/loading.jsx";
 import {Todos} from "/lib/collections/todos.js";
+import {Users} from "meteor-user-roles";
 import FormSchema from '/lib/collections/schema-todo.js';
 import {TableColumns, ColumnMeta,FormOptions,SaveCollection,DeleteObject} from '/lib/collections/columns-todo.jsx';
 import Dataview from 'griddle-react';
@@ -40,7 +41,8 @@ export const Pagetodos = React.createClass({
 
 			data = {
 
-				todos: Todos.find({}, {}).fetch()
+				todos: Todos.find({}, {}).fetch(),
+				users: Users.find({}, {}).fetch()
 			};
 		
 
