@@ -1,14 +1,38 @@
 import React from "react";
-import {
-  Todos as MyCollection
-}
-from "/lib/collections/todos.js";
+import {Todos as MyCollection} from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
 
 // this file should be generated from the application JSON
 
 // used by the the Griddle table
 const TableColumns = ["name", "done", "owner", "sharedTo", "rowButtons"];
+
+// "displayHelpers"
+// now register the DotComponent as customComponent for the specified fields
+const ColumnMeta = [{
+    "columnName": "done",
+    "customComponent": BooleanComponent
+  }, {
+    "columnName": "sharedTo",
+    "customComponent": LookupComponent
+  }, {
+    "columnName": "rowButtons",
+    "customComponent": ButtonsComponent,
+    "displayName": ""
+  }
+
+];
+
+const LookupComponent = React.createClass({
+  render: function() {
+    let ids = this.props.data;
+    return (
+      <span>
+  		{this.props.data.toString()}
+	</span>
+    );
+  }
+});
 
 // used with ColumnMeta by the Griddle Table to format certain columns
 // used to display object.name name part of nested object.
@@ -144,20 +168,7 @@ const EditComponent = React.createClass({
     }
 });
 
-// now register the DotComponent as customComponent for the specified fields
-const ColumnMeta = [{
-    "columnName": "done",
-    "customComponent": BooleanComponent
-  }, {
-    "columnName": "sharedTo",
-    "customComponent": ListComponent
-  }, {
-    "columnName": "rowButtons",
-    "customComponent": ButtonsComponent,
-    "displayName": ""
-  }
 
-];
 
 // Used by tcomb-form to specify certain things about how the forms looks like
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md#list-with-dynamic-items-different-structs-based-on-selected-value

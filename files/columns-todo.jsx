@@ -7,21 +7,7 @@ import FormSchema from '/lib/collections/schema-todo.js';
 // used by the the Griddle table
 const TableColumns = ["name", "done", "owner", "sharedTo", "rowButtons"];
 
-// "displayHelpers"
-// now register the DotComponent as customComponent for the specified fields
-const ColumnMeta = [{
-    "columnName": "done",
-    "customComponent": BooleanComponent
-  }, {
-    "columnName": "sharedTo",
-    "customComponent": LookupComponent
-  }, {
-    "columnName": "rowButtons",
-    "customComponent": ButtonsComponent,
-    "displayName": ""
-  }
 
-];
 
 const LookupComponent = React.createClass({
   render: function() {
@@ -168,7 +154,21 @@ const EditComponent = React.createClass({
     }
 });
 
+// "displayHelpers"
+// now register the DotComponent as customComponent for the specified fields
+const ColumnMeta = [{
+    "columnName": "done",
+    "customComponent": BooleanComponent
+  }, {
+    "columnName": "sharedTo",
+    "customComponent": LookupComponent
+  }, {
+    "columnName": "rowButtons",
+    "customComponent": ButtonsComponent,
+    "displayName": ""
+  }
 
+];
 
 // Used by tcomb-form to specify certain things about how the forms looks like
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md#list-with-dynamic-items-different-structs-based-on-selected-value
