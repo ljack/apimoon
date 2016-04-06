@@ -24,6 +24,8 @@ Files from files are copied to meteor app dir based on configuration in ../apimo
 
 Note that actually the apimoons_page.jsx and pagetodos.jsx contains all the functionality. That is pages in details/edit/insert are not curretly used at all.
 
+# Next in coming out
+1. Create UI for selecting user in Todos.owner and Todos.sharedTo
 
 
 Below is readme for the actual APimoon app.
