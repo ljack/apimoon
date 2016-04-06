@@ -3,17 +3,15 @@
 Files of interest:
 apimoon.json               MeteorKitchen Application JSON for Apimoon 
 # Files that are needed to be generated somewho (examples from two collections apimoon and todos).
-files/columns-apimoon.jsx  "configuration" file for data_view.jsx
-files/schema-apimoon.js    tcomb schema used in data_view.jsx
+1. files/columns-apimoon.jsx  "configuration" file for data_view.jsx
+2. files/schema-apimoon.js    tcomb schema used in data_view.jsx
 
-files/columns-todo.jsx     "configuration" file for data_view.jsx
-files/schema-todo.js       tcomb schema used in data_view.jsx
+3. files/columns-todo.jsx     "configuration" file for data_view.jsx
+4. files/schema-todo.js       tcomb schema used in data_view.jsx
 # Other used files
-files/griddle.css          Modified griddle css to allow table-hover and table-striped to work, used in data_view.jsx
-
-files/client.js            Shows an example how to import collection js usable in client
-
-files/server.js            Contains startup insert code for Apimoon collection. Uses *-code.js files.
+1. files/griddle.css          Modified griddle css to allow table-hover and table-striped to work, used in data_view.jsx
+2. files/client.js            Shows an example how to import collection js usable in client
+3. files/server.js            Contains startup insert code for Apimoon collection. Uses *-code.js files.
 
 Files from files are copied to meteor app dir based on configuration in ../apimoon.json
 
