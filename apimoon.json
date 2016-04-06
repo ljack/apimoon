@@ -110,6 +110,41 @@
 						"lookup_query_params": [],
 						"crud_fields": [],
 						"join_collection_field": ""
+					},
+					{
+						"name": "ownerId",
+						"title": "ownerId",
+						"type": "string",
+						"default": "",
+						"min": "",
+						"max": "",
+						"required": false,
+						"format": "",
+						"searchable": true,
+						"sortable": true,
+						"exportable": false,
+						"input": "text",
+						"input_template": "",
+						"input_group_class": "",
+						"lookup_query_name": "",
+						"lookup_key": "",
+						"lookup_field": "",
+						"display_helper": "",
+						"array_item_type": "",
+						"crud_insert_title": "",
+						"file_collection": "",
+						"file_container": "",
+						"join_collection": "users",
+						"join_container": "owner",
+						"join_fields": [],
+						"show_in_dataview": true,
+						"show_in_insert_form": true,
+						"show_in_update_form": true,
+						"show_in_read_only_form": true,
+						"input_items": [],
+						"lookup_query_params": [],
+						"crud_fields": [],
+						"join_collection_field": ""
 					}
 				],
 				"storage_adapters": [],
@@ -1959,7 +1994,7 @@
 			},
 			{
 				"source": "files/joins.js",
-				"dest": "OUTPUT_DIR/lib/joins/joins.js"
+				"dest": "OUTPUT_DIR/lib/joins/joins-2.js"
 			}
 		],
 		"use_collection2": true,
