@@ -10,11 +10,11 @@ from "/lib/collections/todos.js";
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md
 
 
-var values = [ "jarkko","tester"];
-const Users =t.enums.of( values );
+var values = [ ];
+var Users =t.enums.of( values );
 
 
-const Schema = t.struct({
+var Schema = t.struct({
   _id: t.maybe( t.String ),
   name: t.String, // a required string
   owner: t.maybe( t.String ),

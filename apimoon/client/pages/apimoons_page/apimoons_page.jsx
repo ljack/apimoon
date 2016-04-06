@@ -163,7 +163,8 @@ export const ApimoonsPageView = React.createClass({
 			
 				render() {
 					// console.log("FormSchema=",FormSchema() );
-
+						
+					t.update(FormSchema, {"sharedTo": { $set: ["jarkko","tester"] }} );
 					return (
 	<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}>
 		<form onSubmit={this.onSubmit}>
