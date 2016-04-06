@@ -1915,7 +1915,7 @@
 		"meta_title": "",
 		"frontend": "bootstrap3",
 		"theme": "",
-		"footer_text": "https://github.com/ljack/apimoon https://github.com/ljack/kitchen-templates/ ",
+		"footer_text": "<a href='https://github.com/ljack/apimoon'>https://github.com/ljack/apimoon</a> https://github.com/ljack/kitchen-templates/",
 		"roles": [],
 		"default_role": "",
 		"login_with_password": true,
