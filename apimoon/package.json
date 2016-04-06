@@ -1,0 +1,22 @@
+{
+  "name": "apimoon",
+  "private": true,
+  "babel": {},
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "events": "^1.1.0",
+    "griddle-react": "^0.4.1",
+    "lodash": "^4.7.0",
+    "meteor-node-stubs": "^0.2.1",
+    "meteor-user-roles": "^1.0.6",
+    "react": "^0.14.8",
+    "react-addons-pure-render-mixin": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-modal": "^0.6.1",
+    "react-mounter": "^1.1.0",
+    "tcomb": "^3.0.0",
+    "tcomb-form": "^0.9.1"
+  }
+}
