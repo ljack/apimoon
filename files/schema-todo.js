@@ -16,10 +16,7 @@ export default function() {
   console.log("inside default function this=", this);
   var users = Meteor.users.find().fetch();
   var array = users.map((user) => {
-    let id = user.profile.name;
-    let ret = {};
-    ret[id] = user.profile.name;
-    return ret;
+    return { [user._id]: user.profile.name };
   });
   console.log("array=", array);
     
