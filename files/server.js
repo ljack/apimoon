@@ -4,12 +4,8 @@ import {
 from "meteor-user-roles";
 import { Apimoons } from "/lib/collections/apimoons.js";
 
-Meteor.methods({
-	"getUsers"(){
-		var users = Meteor.users.find( {}, {fields: { "profile.name":1} } ).fetch();
-		console.log("getUsers users=",users);
-		return users;
-	}	
+Meteor.publish("users", () => {
+	return Meteor.users.find( {}, {fields: {"profile.name":1} });
 });
 
 Meteor.startup(function() {

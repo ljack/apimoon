@@ -11,16 +11,9 @@ import {Todos as MyCollection } from "/lib/collections/todos.js";
 // Import with  import FormSchema from "schema-apimoon.js";
 export default function() {
   console.log("inside default function this=",this );
-  var array = [];
+  var array = Meteor.users.find( ).fetch();
   var Users = t.enums.of(array);
-  Meteor.call( "getUsers", {} , (err,res) => {
-    console.log("err=",err," res=",res);
-    if( err ) {
-      
-    } else {
-      array.push(...res);
-    }
-  });
+  console.log("array=",array);
   
   
 
