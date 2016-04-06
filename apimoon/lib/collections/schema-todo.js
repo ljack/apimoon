@@ -16,7 +16,7 @@ const Schema = t.struct({
   _id: t.maybe( t.String ),
   name: t.String, // a required string
   owner: t.maybe( t.String ),
-  sharedTo: t.struct( Users ),
+  sharedTo: Users,
   done:  t.Boolean
   
 })
