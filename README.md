@@ -1,6 +1,8 @@
 # Dataview-type component in React for MK
 Demo app URL https://apimoon-ljack1.c9users.io/
 
+Requires ~/.meteor-kitchen/templates/ from https://github.com/ljack/kitchen-templates
+
 Files of interest:
 [apimoon.json](apimoon.json)               MeteorKitchen Application JSON for Apimoon. 
 #Files that are needed to be generated  
