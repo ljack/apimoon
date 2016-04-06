@@ -163,7 +163,7 @@ export const PagetodosView = React.createClass({
 			
 				render() {
 					// console.log("FormSchema=",FormrmSchema() );
-					console.log( "render=",JSON.parse(JSON.stringify(FormSchema)));
+					console.log( "render="+JSON.stringify(FormSchema));
 					
 					// t.update(FormSchema, {"sharedTo": { $set: ["jarkko","tester"] }} );
 					return (
