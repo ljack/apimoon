@@ -10,7 +10,8 @@ from "/lib/collections/todos.js";
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md
 
 
-var Users =  t.enums.of( [ "jarkko","tester"] );
+var User = t.enums.of( [ "jarkko","tester"]);
+var Users =  t.list( User );
 
 const Schema = t.struct({
   _id: t.maybe( t.String ),
