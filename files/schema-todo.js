@@ -17,7 +17,7 @@ export default function() {
   var users = Meteor.users.find().fetch();
   var array = users.map((user) => {
     //return { [user._id]: user.profile.name };
-    return { gGovbuEcunXctKyqf: "jarkko"  };
+    return { abba: "jarkko"  };
   });
   console.log("array=", array);
     
