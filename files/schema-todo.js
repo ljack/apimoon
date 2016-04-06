@@ -23,7 +23,7 @@ export default function() {
   });
   console.log("array=", array);
     
-  var Users = t.enums(array);
+  var Users = t.enums(array, "Users");
 
 
 
