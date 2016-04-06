@@ -21,7 +21,7 @@ Todos.before.insert(function(userId, doc) {
 	doc.modifiedBy = doc.createdBy;
 
 	
-	if(!doc.createdBy) doc.createdBy = userId;
+	if(!doc.ownerId) doc.ownerId = userId;
 });
 
 Todos.before.update(function(userId, doc, fieldNames, modifier, options) {

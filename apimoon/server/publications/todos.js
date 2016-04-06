@@ -2,14 +2,14 @@ import {Meteor} from "meteor/meteor";
 import {Todos} from "/lib/collections/todos.js";
 
 Meteor.publish("todos", function() {
-	return Todos.find({}, {});
+	return Todos.publishJoinedCursors(Todos.find({}, {}));
 });
 
 Meteor.publish("todo", function(todoId) {
-	return Todos.find({_id:todoId}, {});
+	return Todos.publishJoinedCursors(Todos.find({_id:todoId}, {}));
 });
 
 Meteor.publish("todos_empty", function() {
-	return Todos.find({_id:null}, {});
+	return Todos.publishJoinedCursors(Todos.find({_id:null}, {}));
 });
 

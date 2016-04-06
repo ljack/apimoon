@@ -27,6 +27,11 @@ Schemas.Todos_string = {
 		label: "Done",
 		type: Boolean,
 		optional: true
+	},
+	"owner.name": {
+		label: "Owner",
+		type: String,
+		optional: true
 	}
 };
 Schemas.Todos = new SimpleSchema({
@@ -38,6 +43,11 @@ Schemas.Todos = new SimpleSchema({
 	done: {
 		label: "Done",
 		type: Boolean,
+		optional: true
+	},
+	"owner.name": {
+		label: "Owner",
+		type: String,
 		optional: true
 	}
 });
@@ -51,6 +61,11 @@ Schemas.Todos = new SimpleSchema({
 	done: {
 		label: "Done",
 		type: Boolean,
+		optional: true
+	},
+	"owner.name": {
+		label: "Owner",
+		type: String,
 		optional: true
 	}
 };
