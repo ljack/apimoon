@@ -10,14 +10,17 @@ from "/lib/collections/todos.js";
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md
 
 
-var User = t.enums.of( [ "jarkko","tester"]);
-var Users =  t.list( User );
+
+Users = () => {
+  console.log("Usrs..");
+   return t.enums.of( [ "jarkko","tester"]);
+};
 
 const Schema = t.struct({
   _id: t.maybe( t.String ),
   name: t.String, // a required string
   owner: t.maybe( t.String ),
-  sharedTo: Users,
+  sharedTo: t.list( Users ),
   done:  t.Boolean
   
 })

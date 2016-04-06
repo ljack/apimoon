@@ -11,10 +11,8 @@ from "/lib/collections/todos.js";
 
 
 
-Users = () => {
-  console.log("Usrs..");
-   return t.enums.of( [ "jarkko","tester"]);
-};
+const Users =t.enums.of( [ "jarkko","tester"]);
+
 
 const Schema = t.struct({
   _id: t.maybe( t.String ),
