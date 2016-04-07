@@ -73,14 +73,12 @@ const StartButton = React.createClass({
       }
     },
     getInitialState() {
-      this.state.icons = {
+      return {
+        status: "stopped",
         started: "fa fa-stop-circle",
         starting: "fa fa-hourglass-start fa-spin",
         stopping: "fa fa-refresh fa-spin",
         stopped: "fa fa-play"
-      };
-      return {
-        status: "stopped",
       }
     },
     toggle(evt) {
