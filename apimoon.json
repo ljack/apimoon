@@ -391,9 +391,7 @@
 					}
 				],
 				"find_one": false,
-				"filter": {
-					"'$or'": "[ {ownerId:this.userId},{ sharedTo: {$in: [this.userId ]} } ]"
-				}
+				"filter": {}
 			},
 			{
 				"name": "todo",
