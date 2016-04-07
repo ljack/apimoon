@@ -391,7 +391,9 @@
 					}
 				],
 				"find_one": false,
-				"filter": "asdadas"
+				"filter": {
+					"asd": ""
+				}
 			},
 			{
 				"name": "todo",

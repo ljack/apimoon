@@ -41,7 +41,7 @@ export const Pagetodos = React.createClass({
 
 			data = {
 
-				todos: Todos.find({}, {transform:function(doc) {doc.sharedToDoc={}; Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user });  Meteor.users.find({ _id: {'$in': doc.sharedTo}}).map( function(user) {doc.sharedToDoc[user._id]=user; } ); console.log('doc=',doc);return doc;},sort:["name"]}).fetch(),
+				todos: Todos.find({asd:""}, {transform:function(doc) {doc.sharedToDoc={}; Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user });  Meteor.users.find({ _id: {'$in': doc.sharedTo}}).map( function(user) {doc.sharedToDoc[user._id]=user; } ); console.log('doc=',doc);return doc;},sort:["name"]}).fetch(),
 				users: Users.find({}, {}).fetch()
 			};
 		
