@@ -26,9 +26,9 @@ Meteor.startup(function() {
 	MyCollections.Apimoons = Apimoons;
 	MyCollections.Todos = Todos;
 	console.log(MyCollections);
-	console.log(Meteor.user());
+	console.log(Meteor.userId());
 	let args = {
-		userIn: "abba",
+		userIn: Meteor.userId(),
 		date: new Date(),
 		event: "login"
 	};
