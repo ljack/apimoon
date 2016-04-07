@@ -33,7 +33,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} />
+      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} />
 		</form>
     );
   }

@@ -2016,6 +2016,10 @@
 			{
 				"source": "files/solarized_light.css",
 				"dest": "CLIENT_STYLES_DIR/highlight.css"
+			},
+			{
+				"source": "files/columns.jsx",
+				"dest": "BOTH_LIB_DIR/columns.jsx"
 			}
 		],
 		"use_collection2": true,

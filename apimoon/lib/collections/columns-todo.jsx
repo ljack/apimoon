@@ -4,9 +4,8 @@ import {
 }
 from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
-import Pretty from '/lib/utils/pretty.jsx';
-import Modal from 'react-modal';
 
+import JsonComponent from '/lib/utils/columns.jsx';
 
 // this file should be generated from the application JSON
 // used by the the Griddle table
@@ -59,6 +58,9 @@ const LookupComponent = React.createClass({
 	    </span>);
   }
 });
+
+
+
 // used with ColumnMeta by the Griddle Table to format certain columns
 // used to display object.name name part of nested object.
 const DotComponent = React.createClass({
@@ -117,6 +119,8 @@ const BooleanComponent = React.createClass({
     })
   }
 });
+
+
 const ButtonsComponent = React.createClass({
   render: function() {
     // console.log("ButtonsComponent: render this=", this);
@@ -129,37 +133,7 @@ const ButtonsComponent = React.createClass({
   }
 });
 
-// JSON 
-const JsonComponent = React.createClass({
-  getInitialState() {
-      return {
-        modalIsOpen: this.props.modalIsOpen || false,
-      };
-    },
-    show(evt) {
-      evt.preventDefault();
-      evt.stopPropagation();
-      this.setState({
-        modalIsOpen: true
-      });
-    },
-    closeModal() {
-      this.setState({
-        modalIsOpen: false
-      });
-    },
-    render: function() {
-      // console.log("DeleteComponent: render this=", this);
-      return (<span>
-            <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
-              <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
-              <Pretty data={this.props.rowData} language="JSON"/> 
-            </Modal>
-            <span id="json-button" onClick={this.show} className="fa fa-info-circle fa-lg" title="Show JSON"></span>
-      </span>);
 
-    }
-});
 const DeleteComponent = React.createClass({
   delete(evt) {
       //  console.log("DeleteComponent, evt=", evt);
@@ -200,6 +174,8 @@ const EditComponent = React.createClass({
 			</span>);
     }
 });
+
+
 // "displayHelpers"
 // now register the DotComponent as customComponent for the specified fields
 const ColumnMeta = [{
@@ -225,6 +201,7 @@ const ColumnMeta = [{
   "customComponent": ButtonsComponent,
   "displayName": ""
 }];
+
 // Used by tcomb-form to specify certain things about how the forms looks like
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md#list-with-dynamic-items-different-structs-based-on-selected-value
 const FormOptions = {
@@ -245,6 +222,7 @@ const FormOptions = {
   }
 };
 
+// Delete 
 function DeleteObject(id) {
   console.log("Deleting with id=", id);
   let collection = MyCollection;
@@ -253,6 +231,8 @@ function DeleteObject(id) {
   };
   collection.remove(selector);
 }
+
+
 // this is pretty nasty, and totally different for meteor 1.3 with the client stubs and stuff..
 function SaveCollection(document) {
   document = JSON.parse(JSON.stringify(document));
@@ -272,6 +252,8 @@ function SaveCollection(document) {
     collection.insert(document);
   }
 }
+
+
 // These are needed by the data_view.jsx
 export {
   TableColumns as TableColumns, ColumnMeta as ColumnMeta, FormOptions as FormOptions,
