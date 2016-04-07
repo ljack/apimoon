@@ -5,7 +5,7 @@ import FormSchema from '/lib/collections/schema-todo.js';
 // this file should be generated from the application JSON
 
 // used by the the Griddle table
-const TableColumns = ["name", "done", "owner[ownerId].name", "sharedTo", "rowButtons"];
+const TableColumns = ["name", "done", "ownerId", "sharedTo", "rowButtons"];
 
 
 
@@ -172,7 +172,7 @@ const ColumnMeta = [{
     "customComponent": BooleanComponent
   }, {
     "columnName": "ownerId",
- 
+    "value": "owner[ownerId].name",
     "customComponent": LookupComponent,
     // "displayName": "Owner Name"
   }, , {
