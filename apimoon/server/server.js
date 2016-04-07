@@ -9,6 +9,16 @@ Meteor.publish("users", () => {
 	return Meteor.users.find( {}, {fields: {"profile.name":1} });
 });
 
+Meteor.methods( {
+	"connection_status"(args) {
+		console.log("User connection registered args=",args);
+		// count online users
+		// count total users
+		
+	}
+	
+});
+
 Meteor.startup(function() {
 	// read environment variables from Meteor.settings
 	if (Meteor.settings && Meteor.settings.env && _.isObject(Meteor.settings.env)) {
