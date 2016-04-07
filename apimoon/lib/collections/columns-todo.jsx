@@ -5,7 +5,7 @@ import {
 from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
 
-import JsonComponent from '/lib/utils/columns.jsx';
+import {JsonComponent} from '/lib/utils/columns.jsx';
 
 // this file should be generated from the application JSON
 // used by the the Griddle table
@@ -128,7 +128,7 @@ const ButtonsComponent = React.createClass({
       leftPadding: "5px"
     };
     return (<form className="form-inline" style={paddingStyle}>
-      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} />
+      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} />
 		</form>);
   }
 });
