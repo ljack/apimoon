@@ -171,7 +171,7 @@ const ColumnMeta = [{
     "columnName": "done",
     "customComponent": BooleanComponent
   }, {
-    "columnName": "ownerName",
+    "columnName": "ownerId",
     "value": "owner[ownerId].name",
     "customComponent": LookupComponent,
     // "displayName": "Owner Name"
