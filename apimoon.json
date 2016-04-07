@@ -1994,7 +1994,7 @@
 			},
 			{
 				"source": "files/joins.js",
-				"dest": "OUTPUT_DIR/lib/joins/joins.js"
+				"dest": "OUTPUT_DIR/lib/joins/joins.js2"
 			}
 		],
 		"use_collection2": true,
