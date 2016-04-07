@@ -257,3 +257,30 @@ export {
   TableColumns as TableColumns, ColumnMeta as ColumnMeta, FormOptions as FormOptions,
   SaveCollection, DeleteObject
 };
+
+const CustomStyle = {
+	overlay: {
+		position: 'fixed',
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		backgroundColor: 'rgba(255, 255, 255, 0.75)'
+	},
+	content: {
+		zIndex: '255',
+		position: 'absolute',
+		top: '60px', // changed to 60px to get below the top menu
+		left: '40px',
+		right: '40px',
+		bottom: '40px',
+		border: '1px solid #ccc',
+		background: '#fff',
+		overflow: 'auto',
+		WebkitOverflowScrolling: 'touch',
+		borderRadius: '4px',
+		outline: 'none',
+		padding: '20px'
+
+	}
+};
