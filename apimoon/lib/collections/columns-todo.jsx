@@ -36,7 +36,7 @@ const LookupComponent = React.createClass({
         for (let di of data) {
           // valuePath=sharedToDoc[]
           try {
-            let r = (di+"."+valuePath).split('.').reduce((o, i) => o[i], rowData[arrayPath]);
+            let r = ""+(di+"."+valuePath).split('.').reduce((o, i) => o[i], rowData[arrayPath]);
             result += (<span>{""+r}</span>);
           }
           catch (exception) {
