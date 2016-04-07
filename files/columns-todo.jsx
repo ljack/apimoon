@@ -7,6 +7,7 @@ import FormSchema from '/lib/collections/schema-todo.js';
 import Pretty from '/lib/utils/pretty.jsx';
 import Modal from 'react-modal';
 
+
 // this file should be generated from the application JSON
 // used by the the Griddle table
 const TableColumns = ["name", "done", "ownerId", "sharedTo", "rowButtons"];
@@ -152,7 +153,7 @@ const JsonComponent = React.createClass({
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
-              <Pretty data={this.props.rowData}/> 
+              <Pretty data={this.props.rowData} language="js"/> 
             </Modal>
             <span id="json-button" onClick={this.show} className="fa fa-info-circle fa-lg" title="Show JSON"></span>
       </span>);
