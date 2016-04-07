@@ -7,11 +7,11 @@ Todos.userCanInsert = function(userId, doc) {
 };
 
 Todos.userCanUpdate = function(userId, doc) {
-	return true;
+	return userId && doc.ownerId == userId;
 };
 
 Todos.userCanRemove = function(userId, doc) {
-	return true;
+	return userId && doc.ownerId == userId;
 };
 
 Schemas = this.Schemas || {};
