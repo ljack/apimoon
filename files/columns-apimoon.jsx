@@ -30,6 +30,11 @@ const DotComponent = React.createClass({
 
 // Component which groups row buttons
 const StartButton = React.createClass({
+  getClass() {
+      switch (this.state.status) {
+        
+      }
+  },
   forward() {
       console.log("in forward, status=", this.state.status);
       switch (this.state.status) {
@@ -68,6 +73,12 @@ const StartButton = React.createClass({
       }
     },
     getInitialState() {
+      this.props.icons = {
+        started: "fa fa-stop-circle",
+        starting: "fa fa-hourglass-start fa-spin",
+        stopping: "fa fa-refresh fa-spin",
+        stopped: "fa fa-play"
+      };
       return {
         status: "stopped",
       }
@@ -85,7 +96,7 @@ const StartButton = React.createClass({
 
       return (
         <span>
-         <span id="start-button" onClick={this.toggle} className="fa fa-pencil  fa-lg" title={this.state.status}>{this.state.status}</span>
+         <span id="start-button" onClick={this.toggle} class={this.props.icons[this.state.status]} title={this.state.status}>{this.state.status}</span>
       </span>
       );
     }
