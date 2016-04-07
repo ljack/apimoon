@@ -4,7 +4,7 @@ import {
 }
 from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
-import Pretty from '/client/lib/pretty.jsx';
+import Pretty from '/lib/utils/pretty.jsx';
 import Modal from 'react-modal';
 
 // this file should be generated from the application JSON
