@@ -149,9 +149,7 @@
 				],
 				"owner_field": "ownerId",
 				"storage_adapters": [],
-				"roles_allowed_to_read": [
-					"owner"
-				],
+				"roles_allowed_to_read": [],
 				"roles_allowed_to_insert": [],
 				"roles_allowed_to_update": [
 					"owner"
