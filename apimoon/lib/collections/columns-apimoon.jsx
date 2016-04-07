@@ -75,10 +75,10 @@ const StartButton = React.createClass({
     getInitialState() {
       return {
         status: "stopped",
-        started: "fa fa-stop-circle",
-        starting: "fa fa-hourglass-start fa-spin",
-        stopping: "fa fa-refresh fa-spin",
-        stopped: "fa fa-play"
+        started: "fa fa-stop-circle fa-lg",
+        starting: "fa fa-hourglass-start fa-spin fa-lg",
+        stopping: "fa fa-refresh fa-spin fa-lg",
+        stopped: "fa fa-play fa-lg"
       }
     },
     toggle(evt) {
