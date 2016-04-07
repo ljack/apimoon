@@ -5,6 +5,8 @@ import {
 from "/lib/collections/apimoons.js";
 import FormSchema from '/lib/collections/schema-apimoon.js';
 
+import JsonComponent from '/lib/utils/columns.jsx';
+
 // this file should be generated from the application JSON
 
 // used by the the Griddle table
