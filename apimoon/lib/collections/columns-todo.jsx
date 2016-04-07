@@ -26,20 +26,22 @@ const LookupComponent = React.createClass({
     console.log("LookupComponent props=", this.props);
 
     let valuePath = this.props.metadata.valuePath;
-    console.log("LookupComponent valuePath=",valuePath);
+    console.log("LookupComponent valuePath=", valuePath);
     let result = "";
     if (valuePath) {
       // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
-      if( Array.isArray(data) ) {
+      if (Array.isArray(data)) {
         let arrayPath = this.props.metadata.arrayPath;
-        console.log("arrayPath=",arrayPath);
+        console.log("arrayPath=", arrayPath);
         // sharedToDoc
-        result ="Error, WIP ;)";
-      } else {
+        result = "Error, WIP ;)";
+      }
+      else {
         try {
           result = valuePath.split('.').reduce((o, i) => o[i], rowData);
-        } catch(exception) {
-          result ="Error, WIP ;)";
+        }
+        catch (exception) {
+          result = "Error, WIP ;)";
         }
       }
     }
@@ -190,7 +192,11 @@ const EditComponent = React.createClass({
 // now register the DotComponent as customComponent for the specified fields
 const ColumnMeta = [{
     "columnName": "done",
-    "customComponent": BooleanComponent
+    "customComponent": BooleanComponent,
+     "displayName": "Done"
+  }, {
+    "columnName": "name",
+    "displayName": "Name"
   }, {
     "columnName": "ownerId",
     "valuePath": "owner.profile.name",
