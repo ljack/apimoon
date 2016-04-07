@@ -390,9 +390,7 @@
 						"params": []
 					}
 				],
-				"filter": {
-					"\\$or": "[ {ownerId:this.userId},{ sharedTo: {$in: [this.userId ]} } ]"
-				},
+				"filter": {},
 				"find_one": false
 			},
 			{
