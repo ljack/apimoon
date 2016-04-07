@@ -5,7 +5,10 @@ import {
 from "/lib/collections/apimoons.js";
 import FormSchema from '/lib/collections/schema-apimoon.js';
 
-import {JsonComponent} from '/lib/utils/columns.jsx';
+import {
+  JsonComponent
+}
+from '/lib/utils/columns.jsx';
 
 // this file should be generated from the application JSON
 
@@ -28,46 +31,58 @@ const DotComponent = React.createClass({
 // Component which groups row buttons
 const StartButton = React.createClass({
   forward() {
-    switch (this.state.status) {
-      case 'stopped':
-        this.setState( { status: "starting"});
-        setTimeout( this.forward(), Math.random()*1000*2);
-        break;
-      case 'starting':
-        this.setState( { status: "started"});
-        
-        break;
-      case 'started':
-        this.setState( { status: "stopping"});
-        setTimeout( this.forward(), Math.random()*1000*2);
-        break;
-      case 'stopping':
-        this.setState( { status: "stopped"});
-        break;
-      default:
-        this.setState( { status: "unknown"});
-    }
-  },
-  getInitialState() {
-    return {
-        status: "stopped",
-    }
-  },
-  toggle() {
-      this.forward();
-  },
-  render: function() {
-    console.log("ButtonsComponent: render this=", this);
-    const paddingStyle = {
-      leftPadding: "5px"
-    };
+      switch (this.state.status) {
+        case 'stopped':
+          this.setState({
+            status: "starting"
+          });
+          setTimeout(this.forward(), Math.random() * 1000 * 2);
+          break;
+        case 'starting':
+          this.setState({
+            status: "started"
+          });
 
-    return (
-      <span>
+          break;
+        case 'started':
+          this.setState({
+            status: "stopping"
+          });
+          setTimeout(this.forward(), Math.random() * 1000 * 2);
+          break;
+        case 'stopping':
+          this.setState({
+            status: "stopped"
+          });
+          break;
+        default:
+          this.setState({
+            status: "unknown"
+          });
+      }
+    },
+    getInitialState() {
+      return {
+        status: "stopped",
+      }
+    },
+    toggle(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      this.forward();
+    },
+    render: function() {
+      console.log("ButtonsComponent: render this=", this);
+      const paddingStyle = {
+        leftPadding: "5px"
+      };
+
+      return (
+        <span>
          <span id="start-button" onClick={this.toggle} className="fa fa-pencil  fa-lg" title={this.state.status}>{this.state.status}</span>
       </span>
-    );
-  }
+      );
+    }
 });
 
 // Component which groups row buttons
