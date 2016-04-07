@@ -2,7 +2,7 @@ import {Meteor} from "meteor/meteor";
 import {Todos} from "/lib/collections/todos.js";
 
 Meteor.publish("todos", function() {
-	return Todos.publishJoinedCursors(Todos.find({}, {transform:function(doc) { Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user }); console.log('inside transform=',doc); return doc; },sort:["name"]}));
+	return Todos.publishJoinedCursors(Todos.find({}, {transform:function(doc) { Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user });  Meteor.users.find({ _id: {'$in': doc.sharedTo}}).map( function(res) {doc.sharedToDoc =res } ); console.log('doc=',doc);return doc;},sort:["name"]}));
 });
 
 Meteor.publish("todo", function(todoId) {
