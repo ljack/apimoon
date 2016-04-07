@@ -127,17 +127,19 @@ const ButtonsComponent = React.createClass({
 		</form>);
   }
 });
+
+// JSON 
 const JsonComponent = React.createClass({
-  delete(evt) {
-      evt.preventDefault();
-      evt.stopPropagation();
-      var json = JSON.stringify(this.props.rowData);
-      
+  getInitialState() {
+      return {
+        modalIsOpen: this.props.modalIsOpen || false,
+      };
     },
     render: function() {
+      var json = JSON.stringify(this.props.rowData);
       // console.log("DeleteComponent: render this=", this);
-  	return (<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}><Pretty data={this.json}/> </Modal>);
-  	
+      return (<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}><Pretty data={this.json}/> </Modal>);
+
     }
 });
 const DeleteComponent = React.createClass({
@@ -259,28 +261,28 @@ export {
 };
 
 const CustomStyle = {
-	overlay: {
-		position: 'fixed',
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		backgroundColor: 'rgba(255, 255, 255, 0.75)'
-	},
-	content: {
-		zIndex: '255',
-		position: 'absolute',
-		top: '60px', // changed to 60px to get below the top menu
-		left: '40px',
-		right: '40px',
-		bottom: '40px',
-		border: '1px solid #ccc',
-		background: '#fff',
-		overflow: 'auto',
-		WebkitOverflowScrolling: 'touch',
-		borderRadius: '4px',
-		outline: 'none',
-		padding: '20px'
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+  },
+  content: {
+    zIndex: '255',
+    position: 'absolute',
+    top: '60px', // changed to 60px to get below the top menu
+    left: '40px',
+    right: '40px',
+    bottom: '40px',
+    border: '1px solid #ccc',
+    background: '#fff',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px'
 
-	}
+  }
 };
