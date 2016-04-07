@@ -2008,6 +2008,10 @@
 			{
 				"source": "files/joins.js",
 				"dest": "OUTPUT_DIR/lib/joins/joins.js"
+			},
+			{
+				"source": "files/pretty.jsx",
+				"dest": "CLIENT_LIB_DIR/pretty.jsx"
 			}
 		],
 		"use_collection2": true,
