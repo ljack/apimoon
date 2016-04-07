@@ -15,22 +15,14 @@ const LookupComponent = React.createClass({
     if( ids == null || ids == undefined) {
       return (<span>No data</span>);
     }
+    // owner[ownerId].name
     let columnName = this.props.metadata.columnName; // e.g. sharedTo
     console.log("LookupComponent columnName=",columnName);
     let rowData = this.props.rowData; // this is json of the row
-    let schema= FormSchema();
-    console.log("Here we go again!",schema.meta.props);
-
-    let foreingInfo = schema.meta.props[columnName];
-    console.log("foreingInfo=",foreingInfo);
-    // filled by FormSchema() call, maybe parametrisize it
-    let foreingMap = foreingInfo.meta.type.meta.map;
-    let result="";
-    for(let index in ids ) {
-      result += foreingMap[ids[index]];
-      result += " "
-    }
+    console.log( "LookupComponent rowData=",rowData);
     
+    let schema= FormSchema();
+    let result = "working with this..";    
     return (
       <span>
   		{result}

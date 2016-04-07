@@ -173,7 +173,7 @@ const ColumnMeta = [{
   }, {
     "columnName": "owner[ownerId].name",
     "customComponent": LookupComponent,
-    "displayName": "Owner Name"
+    // "displayName": "Owner Name"
   }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent
