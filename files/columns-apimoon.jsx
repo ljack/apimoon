@@ -38,26 +38,28 @@ const StartButton = React.createClass({
             status: "starting"
           });
           setTimeout(() => {
-            this.forward();
+            this.setState({
+            status: "started"
+          });
+
           }, 2*1000*Math.random() );
           break;
 
         case 'starting':
-          this.setState({
-            status: "started"
-          });
-
           break;
         case 'started':
           this.setState({
             status: "stopping"
           });
-          // setTimeout(this.forward(), Math.random() * 1000 * 2);
-          break;
-        case 'stopping':
-          this.setState({
+           setTimeout(() => {
+            this.setState({
             status: "stopped"
           });
+
+          }, 2*1000*Math.random() );
+          break;
+        case 'stopping':
+       
           break;
         default:
           this.setState({

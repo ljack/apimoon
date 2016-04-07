@@ -39,7 +39,7 @@ const StartButton = React.createClass({
           });
           setTimeout(() => {
             this.forward();
-          }, 2000);
+          }, 2*1000*Math.random() );
           break;
 
         case 'starting':
