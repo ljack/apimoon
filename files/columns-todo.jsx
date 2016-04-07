@@ -142,11 +142,16 @@ const JsonComponent = React.createClass({
         modalIsOpen: true
       });
     },
+    closeModal() {
+      this.setState({
+        modalIsOpen: false
+      });
+    },
     render: function() {
       var json = JSON.stringify(this.props.rowData);
       // console.log("DeleteComponent: render this=", this);
       return (<span>
-            <Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}><Pretty data={this.json}/> </Modal>
+            <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}><button onClick={this.closeModal}>close</button><Pretty data={this.json}/> </Modal>
             <span id="json-button" onClick={this.show} className="fa fa-info-circle fa-lg" title="Show JSON"></span>
       </span>);
 
