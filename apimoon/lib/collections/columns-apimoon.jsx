@@ -31,12 +31,13 @@ const DotComponent = React.createClass({
 // Component which groups row buttons
 const StartButton = React.createClass({
   forward() {
+      console.log("in forward, status=",this.state.status);
       switch (this.state.status) {
         case 'stopped':
           this.setState({
             status: "starting"
           });
-          setTimeout(this.forward(), Math.random() * 1000 * 2);
+           setTimeout(this.forward(), Math.random() * 1000 * 2);
           break;
         case 'starting':
           this.setState({
