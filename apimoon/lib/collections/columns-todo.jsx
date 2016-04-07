@@ -20,7 +20,7 @@ const LookupComponent = React.createClass({
     console.log("LookupComponent columnName=",columnName);
     let rowData = this.props.rowData; // this is json of the row
     console.log( "LookupComponent rowData=",rowData);
-    
+    console.log( "LookupComponent props=",this.props);
     let schema= FormSchema();
     let result = "working with this..";    
     return (
