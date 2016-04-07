@@ -27,7 +27,7 @@ const LookupComponent = React.createClass({
 
     let valuePath = this.props.metadata.valuePath;
     console.log("LookupComponent valuePath=",valuePath);
-    let result = "no valuePath";
+    let result = "";
     if (valuePath) {
       // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
       if( Array.isArray(data) ) {
@@ -194,7 +194,7 @@ const ColumnMeta = [{
   }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent,
-    "valuePath": "owner.profile.name",
+    "valuePath": "users[_id=sharedTo].profile.name",
   }, {
     "columnName": "rowButtons",
     "customComponent": ButtonsComponent,
