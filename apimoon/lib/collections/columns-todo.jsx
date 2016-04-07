@@ -21,7 +21,9 @@ const LookupComponent = React.createClass({
     let rowData = this.props.rowData; // this is json of the row
     console.log( "LookupComponent rowData=",rowData);
     console.log( "LookupComponent props=",this.props);
+    
     let valuePath = this.props.metadata.valuePath;
+    // owner[ownerId].name
     let result = rowData[valuePath];
     let schema= FormSchema();
     return (
@@ -173,7 +175,7 @@ const ColumnMeta = [{
     "customComponent": BooleanComponent
   }, {
     "columnName": "ownerId",
-    "valuePath": "owner[ownerId].name",
+    "valuePath": "owner.profile.name",
     "customComponent": LookupComponent,
     // "displayName": "Owner Name"
   }, , {
