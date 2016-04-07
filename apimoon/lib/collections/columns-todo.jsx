@@ -4,13 +4,12 @@ import {
 }
 from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
+import Pretty from '/client/lib/pretty.jsx';
+import Modal from 'react-modal';
 
 // this file should be generated from the application JSON
-
 // used by the the Griddle table
 const TableColumns = ["name", "done", "ownerId", "sharedTo", "rowButtons"];
-
-
 
 const LookupComponent = React.createClass({
   render: function() {
@@ -24,7 +23,6 @@ const LookupComponent = React.createClass({
     let rowData = this.props.rowData; // this is json of the row
     console.log("LookupComponent rowData=", rowData);
     console.log("LookupComponent props=", this.props);
-
     let valuePath = this.props.metadata.valuePath;
     console.log("LookupComponent valuePath=", valuePath);
     let result = "";
@@ -36,8 +34,8 @@ const LookupComponent = React.createClass({
         for (let di of data) {
           // valuePath=sharedToDoc[]
           try {
-            let r = (di+"."+valuePath).split('.').reduce((o, i) => o[i], rowData[arrayPath]);
-            result += r+" ";
+            let r = (di + "." + valuePath).split('.').reduce((o, i) => o[i], rowData[arrayPath]);
+            result += r + " ";
           }
           catch (exception) {
             console.log(exception);
@@ -55,38 +53,29 @@ const LookupComponent = React.createClass({
       }
     }
     let schema = FormSchema();
-    return (
-      <span>
+    return (<span>
   		{result}
-	    </span>
-    );
+	    </span>);
   }
 });
-
 // used with ColumnMeta by the Griddle Table to format certain columns
 // used to display object.name name part of nested object.
 const DotComponent = React.createClass({
   render: function() {
     //console.log("DotComponent: render this=", this);
-    return (
-      <span>
+    return (<span>
 		{this.props.data.name}
-	</span>
-    );
+	</span>);
   }
 });
-
 const ListComponent = React.createClass({
   render: function() {
     // console.log("ListComponent: render this=", this);
-    return (
-      <span>
+    return (<span>
   		{this.props.data.toString()}
-	</span>
-    );
+	</span>);
   }
 });
-
 const BooleanComponent = React.createClass({
   getInitialState: function() {
     return {
@@ -96,8 +85,7 @@ const BooleanComponent = React.createClass({
   },
   render: function() {
     if (this.state.inlineEdit) {
-      return (
-        <label>
+      return (<label>
             <input type="checkbox"
               name={this.props.name}
               defaultChecked={this.state.checked}
@@ -109,7 +97,6 @@ const BooleanComponent = React.createClass({
     else {
       return (this.props.data);
     }
-
   },
   handleClick: function(e) {
     // e.preventDefault();
@@ -118,10 +105,8 @@ const BooleanComponent = React.createClass({
     this.setState({
       checked: value
     });
-
     const id = this.props.rowData._id;
     const fieldName = this.props.metadata.columnName;
-
     let values = {};
     values[fieldName] = value;
     MyCollection.update({
@@ -131,26 +116,31 @@ const BooleanComponent = React.createClass({
     })
   }
 });
-
-
-
 const ButtonsComponent = React.createClass({
   render: function() {
     // console.log("ButtonsComponent: render this=", this);
     const paddingStyle = {
       leftPadding: "5px"
     };
-
-    return (
-      <form className="form-inline" style={paddingStyle}>
-      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} />
-		</form>
-    );
+    return (<form className="form-inline" style={paddingStyle}>
+      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} />
+		</form>);
   }
 });
-
+const JsonComponent = React.createClass({
+  delete(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      var json = JSON.stringify(this.props.rowData);
+      
+    },
+    render: function() {
+      // console.log("DeleteComponent: render this=", this);
+  	return (<Modal ref="modal" style={CustomStyle} isOpen={this.state.modalIsOpen}><Pretty data={this.json}/> </Modal>);
+  	
+    }
+});
 const DeleteComponent = React.createClass({
-
   delete(evt) {
       //  console.log("DeleteComponent, evt=", evt);
       evt.preventDefault();
@@ -169,11 +159,9 @@ const DeleteComponent = React.createClass({
     },
     render: function() {
       // console.log("DeleteComponent: render this=", this);
-      return (
-        <span id="delete-button" onClick={this.delete} className="fa fa-trash-o fa-lg" title="Delete">
+      return (<span id="delete-button" onClick={this.delete} className="fa fa-trash-o fa-lg" title="Delete">
      {this.props.data}
-			</span>
-      );
+			</span>);
     }
 });
 const EditComponent = React.createClass({
@@ -184,47 +172,39 @@ const EditComponent = React.createClass({
       //var id = this.props.rowData._id;
       //const rowData = this.props.rowData;
       //alert("Editing " + JSON.stringify((rowData)));
-
       //return false;
     },
     render: function() {
       //  console.log("EditComponent: render this=", this);
-
-      return (
-        <span id="edit-button" onClick={this.edit} className="fa fa-pencil  fa-lg" title="Edit">{this.props.data}
-			</span>
-      );
+      return (<span id="edit-button" onClick={this.edit} className="fa fa-pencil  fa-lg" title="Edit">{this.props.data}
+			</span>);
     }
 });
-
 // "displayHelpers"
 // now register the DotComponent as customComponent for the specified fields
 const ColumnMeta = [{
-    "columnName": "done",
-    "customComponent": BooleanComponent,
-    "displayName": "Done"
-  }, {
-    "columnName": "name",
-    "displayName": "Name"
-  }, {
-    "columnName": "ownerId",
-    "valuePath": "owner.profile.name",
-    "customComponent": LookupComponent,
-    "displayName": "Owner Name"
-  }, , {
-    "columnName": "sharedTo",
-    "customComponent": LookupComponent,
-    "valuePath": "profile.name",
-    "arrayPath": "sharedToDoc",
-    "displayName": "Shared to"
-  }, {
-    "columnName": "rowButtons",
-    "customComponent": ButtonsComponent,
-    "displayName": ""
-  }
-
-];
-
+  "columnName": "done",
+  "customComponent": BooleanComponent,
+  "displayName": "Done"
+}, {
+  "columnName": "name",
+  "displayName": "Name"
+}, {
+  "columnName": "ownerId",
+  "valuePath": "owner.profile.name",
+  "customComponent": LookupComponent,
+  "displayName": "Owner Name"
+}, , {
+  "columnName": "sharedTo",
+  "customComponent": LookupComponent,
+  "valuePath": "profile.name",
+  "arrayPath": "sharedToDoc",
+  "displayName": "Shared to"
+}, {
+  "columnName": "rowButtons",
+  "customComponent": ButtonsComponent,
+  "displayName": ""
+}];
 // Used by tcomb-form to specify certain things about how the forms looks like
 // https://github.com/gcanti/tcomb-form/blob/master/GUIDE.md#list-with-dynamic-items-different-structs-based-on-selected-value
 const FormOptions = {
@@ -246,7 +226,6 @@ const FormOptions = {
 };
 
 function DeleteObject(id) {
-
   console.log("Deleting with id=", id);
   let collection = MyCollection;
   let selector = {
@@ -254,8 +233,6 @@ function DeleteObject(id) {
   };
   collection.remove(selector);
 }
-
-
 // this is pretty nasty, and totally different for meteor 1.3 with the client stubs and stuff..
 function SaveCollection(document) {
   document = JSON.parse(JSON.stringify(document));
@@ -264,9 +241,6 @@ function SaveCollection(document) {
   let selector = {
     _id: document._id
   };
-
-
-
   if (collection.findOne(selector) != null) {
     delete document._id;
     collection.update(selector, {
@@ -277,10 +251,7 @@ function SaveCollection(document) {
     delete document._id;
     collection.insert(document);
   }
-
 }
-
-
 // These are needed by the data_view.jsx
 export {
   TableColumns as TableColumns, ColumnMeta as ColumnMeta, FormOptions as FormOptions,
