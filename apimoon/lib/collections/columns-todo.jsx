@@ -14,8 +14,8 @@ const TableColumns = ["name", "done", "ownerId", "sharedTo", "rowButtons"];
 
 const LookupComponent = React.createClass({
   render: function() {
-    let ids = this.props.data;
-    if (ids == null || ids == undefined) {
+    let data = this.props.data;
+    if (data == null || data == undefined) {
       return (<span>No data</span>);
     }
     // owner[ownerId].name
@@ -26,10 +26,17 @@ const LookupComponent = React.createClass({
     console.log("LookupComponent props=", this.props);
 
     let valuePath = this.props.metadata.valuePath;
+    console.log("LookupComponent valuePath=",valuePath);
     let result = "no valuePath";
     if (valuePath) {
       // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
-      result = valuePath.split('.').reduce((o, i) => o[i], rowData)
+      if( Array.isArray(data) ) {
+        for( let id of data) {
+          result +=  valuePath.split('.').reduce((o, i) => o[i], rowData)
+        }
+      } else {
+        result = valuePath.split('.').reduce((o, i) => o[i], rowData)
+      }
     }
     let schema = FormSchema();
     return (
@@ -186,7 +193,8 @@ const ColumnMeta = [{
     // "displayName": "Owner Name"
   }, , {
     "columnName": "sharedTo",
-    "customComponent": LookupComponent
+    "customComponent": LookupComponent,
+    "valuePath": "owner.profile.name",
   }, {
     "columnName": "rowButtons",
     "customComponent": ButtonsComponent,
