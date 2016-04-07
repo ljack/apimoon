@@ -2012,6 +2012,10 @@
 			{
 				"source": "files/pretty.jsx",
 				"dest": "BOTH_LIB_DIR/pretty.jsx"
+			},
+			{
+				"source": "files/solarized_light.css",
+				"dest": "CLIENT_STYLES_DIR/highlight.css"
 			}
 		],
 		"use_collection2": true,
