@@ -17,7 +17,7 @@ Meteor.startup(function() {
   MyCollections.Apimoons = Apimoons;
   MyCollections.Todos = Todos;
 	console.log(MyCollections);
-	
+	console.log( Meteor.user() );
 	let args = { user: Meteor.user(), date: new Date(), event: "login" };
 	Meteor.call("connection_status", args  );
 

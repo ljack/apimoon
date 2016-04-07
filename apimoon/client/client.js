@@ -18,7 +18,7 @@ Meteor.startup(function() {
   MyCollections.Todos = Todos;
 	console.log(MyCollections);
 	
-	let args = { user: Meteor.user(), date: new Date() };
+	let args = { user: Meteor.user(), date: new Date(), event: "login" };
 	Meteor.call("connection_status", args  );
 
 });
