@@ -26,6 +26,48 @@ const DotComponent = React.createClass({
 });
 
 // Component which groups row buttons
+const StartButton = React.createClass({
+  forward() {
+    switch (this.state.status) {
+      case 'stopped':
+        this.setState( { status: "starting"});
+        break;
+      case 'starting':
+        this.setState( { status: "started"});
+        break;
+      case 'started':
+        this.setState( { status: "stopping"});
+        break;
+      case 'stopping':
+        this.setState( { status: "stopped"});
+        break;
+      default:
+        this.setState( { status: "unknown"});
+    }
+  },
+  getInitialState() {
+    return {
+        status: "stopped",
+    }
+  },
+  toggle() {
+      this.forward();
+  },
+  render: function() {
+    console.log("ButtonsComponent: render this=", this);
+    const paddingStyle = {
+      leftPadding: "5px"
+    };
+
+    return (
+      <span>
+         <span id="start-button" onClick={this.toggle} className="fa fa-pencil  fa-lg" title={title}>{this.state.status}</span>
+      </span>
+    );
+  }
+});
+
+// Component which groups row buttons
 const ButtonsComponent = React.createClass({
   render: function() {
     console.log("ButtonsComponent: render this=", this);
@@ -35,7 +77,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} />
+      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }

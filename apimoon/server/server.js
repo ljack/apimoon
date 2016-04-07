@@ -12,6 +12,7 @@ Meteor.publish("users", () => {
 Meteor.methods( {
 	"connection_status"(args) {
 		console.log("User connection registered args=",args);
+		console.log("this=",this);
 		// count online users
 		// count total users
 		
