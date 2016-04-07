@@ -5,7 +5,7 @@ import FormSchema from '/lib/collections/schema-todo.js';
 // this file should be generated from the application JSON
 
 // used by the the Griddle table
-const TableColumns = ["name", "done", "owner", "sharedTo", "rowButtons"];
+const TableColumns = ["name", "done", "owner[ownerId].name", "sharedTo", "rowButtons"];
 
 
 
@@ -16,6 +16,7 @@ const LookupComponent = React.createClass({
       return (<span>No data</span>);
     }
     let columnName = this.props.metadata.columnName; // e.g. sharedTo
+    console.log("LookupComponent columnName=",columnName);
     let rowData = this.props.rowData; // this is json of the row
     let schema= FormSchema();
     console.log("Here we go again!",schema.meta.props);

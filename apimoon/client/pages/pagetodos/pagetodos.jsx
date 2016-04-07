@@ -41,7 +41,7 @@ export const Pagetodos = React.createClass({
 
 			data = {
 
-				todos: Todos.find({}, {}).fetch(),
+				todos: Todos.find({}, {transform:function(doc) { Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user }); console.log('inside transform=',doc); return doc; },sort:["name"]}).fetch(),
 				users: Users.find({}, {}).fetch()
 			};
 		

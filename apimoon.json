@@ -80,6 +80,7 @@
 						"name": "owner.name",
 						"title": "Owner",
 						"type": "string",
+						"display_helper": "owner.name.displayHelper",
 						"default": "",
 						"min": "",
 						"max": "",
@@ -91,30 +92,31 @@
 						"input": "text",
 						"input_template": "",
 						"input_group_class": "",
+						"input_items": [],
 						"lookup_query_name": "",
+						"lookup_query_params": [],
 						"lookup_key": "",
 						"lookup_field": "",
-						"display_helper": "owner.name.displayHelper",
 						"array_item_type": "",
+						"crud_fields": [],
 						"crud_insert_title": "",
 						"file_collection": "",
 						"file_container": "",
 						"join_collection": "",
+						"join_collection_field": "",
 						"join_container": "",
 						"join_fields": [],
 						"show_in_dataview": true,
 						"show_in_insert_form": true,
 						"show_in_update_form": true,
-						"show_in_read_only_form": true,
-						"input_items": [],
-						"lookup_query_params": [],
-						"crud_fields": [],
-						"join_collection_field": ""
+						"show_in_read_only_form": true
 					},
 					{
 						"name": "ownerId",
 						"title": "ownerId",
 						"type": "string",
+						"join_collection": "users",
+						"join_container": "owner",
 						"default": "",
 						"min": "",
 						"max": "",
@@ -126,29 +128,27 @@
 						"input": "text",
 						"input_template": "",
 						"input_group_class": "",
+						"input_items": [],
 						"lookup_query_name": "",
+						"lookup_query_params": [],
 						"lookup_key": "",
 						"lookup_field": "",
 						"display_helper": "",
 						"array_item_type": "",
+						"crud_fields": [],
 						"crud_insert_title": "",
 						"file_collection": "",
 						"file_container": "",
-						"join_collection": "users",
-						"join_container": "owner",
+						"join_collection_field": "",
 						"join_fields": [],
 						"show_in_dataview": true,
 						"show_in_insert_form": true,
 						"show_in_update_form": true,
-						"show_in_read_only_form": true,
-						"input_items": [],
-						"lookup_query_params": [],
-						"crud_fields": [],
-						"join_collection_field": ""
+						"show_in_read_only_form": true
 					}
 				],
-				"storage_adapters": [],
 				"owner_field": "ownerId",
+				"storage_adapters": [],
 				"roles_allowed_to_read": [],
 				"roles_allowed_to_insert": [],
 				"roles_allowed_to_update": [],
@@ -372,15 +372,20 @@
 			{
 				"name": "todos",
 				"collection": "todos",
-				"find_one": false,
-				"filter": {},
-				"options": {},
+				"options": {
+					"transform": "function(doc) { Meteor.users.find({ _id: doc.ownerId }).map(function(user) { doc.owner = user }); console.log('inside transform=',doc); return doc; }",
+					"sort": [
+						"name"
+					]
+				},
 				"related_queries": [
 					{
 						"name": "users",
 						"params": []
 					}
-				]
+				],
+				"find_one": false,
+				"filter": {}
 			},
 			{
 				"name": "todo",
@@ -2000,11 +2005,11 @@
 			}
 		],
 		"use_collection2": true,
+		"footer_text": "Check source code at GitHub: <a href=\"https://github.com/ljack/apimoon\">https://github.com/ljack/apimoon</a> and <a href=\"https://github.com/ljack/kitchen-templates/\">https://github.com/ljack/kitchen-templates/</a>",
 		"meta_description": "",
 		"meta_title": "",
 		"frontend": "bootstrap3",
 		"theme": "",
-		"footer_text": "Check source code at GitHub: <a href=\"https://github.com/ljack/apimoon\">https://github.com/ljack/apimoon</a> and <a href=\"https://github.com/ljack/kitchen-templates/\">https://github.com/ljack/kitchen-templates/</a>",
 		"roles": [],
 		"default_role": "",
 		"login_with_password": true,
