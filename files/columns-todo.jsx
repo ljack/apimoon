@@ -195,12 +195,13 @@ const ColumnMeta = [{
     "columnName": "ownerId",
     "valuePath": "owner.profile.name",
     "customComponent": LookupComponent,
-    // "displayName": "Owner Name"
+    "displayName": "Owner Name"
   }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent,
     "valuePath": "profile.name",
-    "arrayPath": "sharedToDoc"
+    "arrayPath": "sharedToDoc",
+    "displayName": "Shared to"
   }, {
     "columnName": "rowButtons",
     "customComponent": ButtonsComponent,
