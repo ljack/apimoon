@@ -179,8 +179,9 @@ const ColumnMeta = [{
     "columnName": "done",
     "customComponent": BooleanComponent
   }, {
-    "columnName": "owner",
-    "customComponent": LookupComponent
+    "columnName": "owner[ownerId].name",
+    "customComponent": LookupComponent,
+    "displayName": "Owner Name"
   }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent
