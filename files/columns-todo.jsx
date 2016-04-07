@@ -1,5 +1,8 @@
 import React from "react";
-import {Todos as MyCollection} from "/lib/collections/todos.js";
+import {
+  Todos as MyCollection
+}
+from "/lib/collections/todos.js";
 import FormSchema from '/lib/collections/schema-todo.js';
 
 // this file should be generated from the application JSON
@@ -12,20 +15,23 @@ const TableColumns = ["name", "done", "ownerId", "sharedTo", "rowButtons"];
 const LookupComponent = React.createClass({
   render: function() {
     let ids = this.props.data;
-    if( ids == null || ids == undefined) {
+    if (ids == null || ids == undefined) {
       return (<span>No data</span>);
     }
     // owner[ownerId].name
     let columnName = this.props.metadata.columnName; // e.g. sharedTo
-    console.log("LookupComponent columnName=",columnName);
+    console.log("LookupComponent columnName=", columnName);
     let rowData = this.props.rowData; // this is json of the row
-    console.log( "LookupComponent rowData=",rowData);
-    console.log( "LookupComponent props=",this.props);
-    
+    console.log("LookupComponent rowData=", rowData);
+    console.log("LookupComponent props=", this.props);
+
     let valuePath = this.props.metadata.valuePath;
-    // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
-    let result = valuePath.split('.').reduce((o,i)=>o[i], rowData)
-    let schema= FormSchema();
+    let result = "no valuePath";
+    if (valuePath) {
+      // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
+      result = valuePath.split('.').reduce((o, i) => o[i], rowData)
+    }
+    let schema = FormSchema();
     return (
       <span>
   		{result}
@@ -155,7 +161,7 @@ const EditComponent = React.createClass({
       //var id = this.props.rowData._id;
       //const rowData = this.props.rowData;
       //alert("Editing " + JSON.stringify((rowData)));
-      
+
       //return false;
     },
     render: function() {

@@ -23,8 +23,8 @@ const LookupComponent = React.createClass({
     console.log( "LookupComponent props=",this.props);
     
     let valuePath = this.props.metadata.valuePath;
-    // owner[ownerId].name
-    let result = rowData[valuePath];
+    // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
+    let result = valuePath.split('.').reduce((o,i)=>o[i], rowData)
     let schema= FormSchema();
     return (
       <span>
