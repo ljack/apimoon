@@ -32,6 +32,7 @@ const LookupComponent = React.createClass({
       // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
       if( Array.isArray(data) ) {
         let arrayPath = this.props.metadata.arrayPath;
+        console.log("arrayPath=",arrayPath);
         // sharedToDoc
         result ="Error, WIP ;)";
       } else {
