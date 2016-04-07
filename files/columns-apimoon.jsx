@@ -31,12 +31,15 @@ const StartButton = React.createClass({
     switch (this.state.status) {
       case 'stopped':
         this.setState( { status: "starting"});
+        setTimeout( this.forward(), Math.random()*1000*2);
         break;
       case 'starting':
         this.setState( { status: "started"});
+        
         break;
       case 'started':
         this.setState( { status: "stopping"});
+        setTimeout( this.forward(), Math.random()*1000*2);
         break;
       case 'stopping':
         this.setState( { status: "stopped"});
@@ -61,7 +64,7 @@ const StartButton = React.createClass({
 
     return (
       <span>
-         <span id="start-button" onClick={this.toggle} className="fa fa-pencil  fa-lg" title={title}>{this.state.status}</span>
+         <span id="start-button" onClick={this.toggle} className="fa fa-pencil  fa-lg" title={this.state.status}>{this.state.status}</span>
       </span>
     );
   }
