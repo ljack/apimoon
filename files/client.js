@@ -13,8 +13,9 @@ Meteor.startup(function() {
 
 // A hack to create Collections global which can be accessed on the browser easily
 if (Meteor.isDevelopment) {
-  Collections.Apimoons = require('/lib/collections/apimoons.js');
-  Collections.Todos = require('/lib/collections/todos.js');
+  MyCollections = {};
+  MyCollections.Apimoons = require('/lib/collections/apimoons.js');
+  MyCollections.Todos = require('/lib/collections/todos.js');
 
 	
 }
