@@ -151,7 +151,7 @@ const JsonComponent = React.createClass({
       // console.log("DeleteComponent: render this=", this);
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
-              <button onClick={this.closeModal}>close</button>
+              <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
               <Pretty data={this.props.rowData}/> 
             </Modal>
             <span id="json-button" onClick={this.show} className="fa fa-info-circle fa-lg" title="Show JSON"></span>
