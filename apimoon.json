@@ -1947,7 +1947,9 @@
 			"footer_class": ""
 		},
 		"packages": {
-			"meteor": [],
+			"meteor": [
+				"meteortoys:allthings"
+			],
 			"npm": [],
 			"mrt": []
 		},

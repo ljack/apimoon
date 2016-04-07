@@ -2,7 +2,6 @@ import {Meteor} from "meteor/meteor";
 import {Todos} from "/lib/collections/todos.js";
 
 Meteor.publish("todos", function() {
-	console.log("publish todos");
 	return Todos.publishJoinedCursors(Todos.find({}, {}));
 });
 
