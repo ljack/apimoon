@@ -94,7 +94,7 @@ const StartButton = React.createClass({
 
       return (
         <span>
-         <span id="start-button" onClick={this.toggle} class={this.state[this.state.status]} title={this.state.status}>{this.state.status}</span>
+         <span id="start-button" onClick={this.toggle} className={this.state[this.state.status]} title={this.state.status}>{this.state.status}</span>
       </span>
       );
     }
