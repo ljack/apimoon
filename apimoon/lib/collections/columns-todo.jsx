@@ -31,11 +31,15 @@ const LookupComponent = React.createClass({
     if (valuePath) {
       // http://stackoverflow.com/questions/6393943/convert-javascript-string-in-dot-notation-into-an-object-reference
       if( Array.isArray(data) ) {
-        for( let id of data) {
-          result +=  valuePath.split('.').reduce((o, i) => o[i], rowData)
-        }
+        let arrayPath = this.props.metadata.arrayPath;
+        // sharedToDoc
+        return "still in progress ;)";
       } else {
-        result = valuePath.split('.').reduce((o, i) => o[i], rowData)
+        try {
+          result = valuePath.split('.').reduce((o, i) => o[i], rowData);
+        } catch(exception) {
+          result ="object value resolve failed ;) WIP";
+        }
       }
     }
     let schema = FormSchema();
@@ -194,7 +198,8 @@ const ColumnMeta = [{
   }, , {
     "columnName": "sharedTo",
     "customComponent": LookupComponent,
-    "valuePath": "users[_id=sharedTo].profile.name",
+    "valuePath": "profile.name",
+    "arrayPath": "sharedToDoc"
   }, {
     "columnName": "rowButtons",
     "customComponent": ButtonsComponent,

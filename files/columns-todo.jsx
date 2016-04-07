@@ -33,12 +33,12 @@ const LookupComponent = React.createClass({
       if( Array.isArray(data) ) {
         let arrayPath = this.props.metadata.arrayPath;
         // sharedToDoc
-        return "still in progress ;)";
+        result ="Error, WIP ;)";
       } else {
         try {
           result = valuePath.split('.').reduce((o, i) => o[i], rowData);
         } catch(exception) {
-          result ="object value resolve failed ;) WIP";
+          result ="Error, WIP ;)";
         }
       }
     }
