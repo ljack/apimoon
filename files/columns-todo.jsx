@@ -33,7 +33,15 @@ const LookupComponent = React.createClass({
       if (Array.isArray(data)) {
         let arrayPath = this.props.metadata.arrayPath;
         console.log("arrayPath=", arrayPath);
-        // sharedToDoc
+        for (let di of data) {
+          // valuePath=sharedToDoc[]
+          try {
+            result = (di+"."+valuePath).split('.').reduce((o, i) => o[i], rowData[arrayPath]);
+          }
+          catch (exception) {
+            result = "Error, WIP ;)";
+          }
+        }
         result = "Error, WIP ;)";
       }
       else {
@@ -193,7 +201,7 @@ const EditComponent = React.createClass({
 const ColumnMeta = [{
     "columnName": "done",
     "customComponent": BooleanComponent,
-     "displayName": "Done"
+    "displayName": "Done"
   }, {
     "columnName": "name",
     "displayName": "Name"
