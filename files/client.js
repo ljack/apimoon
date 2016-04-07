@@ -1,6 +1,6 @@
 import {Users} from "meteor-user-roles";
 import {Apimoons} from "/lib/collections/apimoons.js";
-
+import {Todos} from "/lib/collections/todos.js";
 Meteor.startup(function() {
 	
 	console.log("Client startup running at "+new Date().toISOString());
@@ -14,9 +14,9 @@ Meteor.startup(function() {
 // A hack to create Collections global which can be accessed on the browser easily
 if (Meteor.isDevelopment) {
   MyCollections = {};
-  MyCollections.Apimoons = require('/lib/collections/apimoons.js');
-  MyCollections.Todos = require('/lib/collections/todos.js');
-
+  MyCollections.Apimoons = Apimoons;
+  MyCollections.Todos = Todos;
+	console.log(MyCollections);
 	
 }
 	
