@@ -28,7 +28,7 @@ Meteor.startup(function() {
 	console.log(MyCollections);
 	console.log(Meteor.user());
 	let args = {
-		userIn: Meteor.user(),
+		userIn: "abba",
 		date: new Date(),
 		event: "login"
 	};
