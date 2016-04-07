@@ -12,13 +12,12 @@ Meteor.startup(function() {
 	}
 
 // A hack to create Collections global which can be accessed on the browser easily
-if (Meteor.isDevelopment) {
+	
   MyCollections = {};
   MyCollections.Apimoons = Apimoons;
   MyCollections.Todos = Todos;
 	console.log(MyCollections);
 	
-}
 	
 
 });
