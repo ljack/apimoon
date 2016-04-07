@@ -239,7 +239,7 @@ const FormOptions = {
     sharedTo: {
       type: "text"
     },
-    ownerId: {
+    owner: {
       type: "static"
     }
   }
