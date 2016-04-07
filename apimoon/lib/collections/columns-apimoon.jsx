@@ -47,7 +47,7 @@ const StartButton = React.createClass({
             status: "started"
           });
 
-          }, 10*1000*Math.random() );
+          }, 30*1000*Math.random() );
           break;
 
         case 'starting':
@@ -61,7 +61,7 @@ const StartButton = React.createClass({
             status: "stopped"
           });
 
-          }, 10*1000*Math.random() );
+          }, 30*1000*Math.random() );
           break;
         case 'stopping':
        
