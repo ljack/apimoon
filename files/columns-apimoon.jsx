@@ -125,9 +125,9 @@ const StartButton = React.createClass({
 
 const CodeComponent = React.createClass({
   getInitialState() {
-      this.setState({
+      return {
         hover: "fa fa-lg fa-code"
-      });
+      };
     },
     hover() {
       this.setState({
