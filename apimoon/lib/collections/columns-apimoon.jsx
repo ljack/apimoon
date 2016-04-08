@@ -31,7 +31,7 @@ const DotComponent = React.createClass({
 // Component to simulate start/stop failure scenario
 const StartButton = React.createClass({
 
-    forward() {
+  forward() {
       switch (this.state.status) {
         case 'recovering':
 
@@ -123,6 +123,15 @@ const StartButton = React.createClass({
     }
 });
 
+const CodeComponent = React.createClass({
+  render() {
+    console.log("CodeComponent: render this=", this);
+
+    alert("Coming soon");
+  
+  }
+});
+
 // Component which groups row buttons
 const ButtonsComponent = React.createClass({
   render: function() {
@@ -133,7 +142,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
+      <CodeComponent rowData={this.props.rowData} <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }

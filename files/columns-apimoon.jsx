@@ -124,12 +124,31 @@ const StartButton = React.createClass({
 });
 
 const CodeComponent = React.createClass({
-  render() {
-    console.log("CodeComponent: render this=", this);
+  getInitialState() {
+      this.setState({
+        hover: "fa fa-lg fa-code"
+      });
+    },
+    hover() {
+      this.setState({
+        hover: "fa fa-2x fa-code"
+      });
+    },
+    mouseOut() {
+      this.setState({
+        hover: "fa fa-lg fa-code"
+      });
+    },
+    render() {
+      console.log("CodeComponent: render this=", this);
 
-    alert("Coming soon");
-  
-  }
+      return (
+        <span>
+         <span id="code-button" onClick={this.toggle} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} title={this.state.status}><i  className="{this.state.hover}" /> </span>
+      </span>
+      );
+
+    }
 });
 
 // Component which groups row buttons
@@ -142,7 +161,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <CodeComponent rowData={this.props.rowData} <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
+      <CodeComponent rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }
