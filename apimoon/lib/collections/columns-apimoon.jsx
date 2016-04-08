@@ -139,7 +139,7 @@ const CodeComponent = React.createClass({
         hover: "fa fa-lg fa-code"
       });
     },
-    render() {
+    render: function() {
       console.log("CodeComponent: render this=", this);
 
       return (
