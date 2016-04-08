@@ -32,22 +32,48 @@ const DotComponent = React.createClass({
 const StartButton = React.createClass({
   getClass() {
       switch (this.state.status) {
-        
+
       }
-  },
-  forward() {
+    },
+    forward() {
       console.log("in forward, status=", this.state.status);
       switch (this.state.status) {
+        case 'recovering':
+
+          break;
+        case 'failedToStart':
+          this.setState({
+            status: "recovering"
+          });
+          setTimeout(() => {
+            this.setState({
+              status: Math.random() < 0.5 ? "stopped" : "started"
+            });
+          }, 30 * 1000 * Math.random());
+
+          break;
+        case 'failedToStop':
+          this.setState({
+            status: "recovering"
+          });
+          setTimeout(() => {
+            this.setState({
+              status: Math.random() < 0.5 ? "stopped" : "started"
+            });
+          }, 30 * 1000 * Math.random());
+
+          break;
         case 'stopped':
           this.setState({
             status: "starting"
           });
+
           setTimeout(() => {
             this.setState({
-            status: "started"
-          });
+              status: Math.random() < 0.5 ? "started" : "failedToStart"
+            });
+          }, 30 * 1000 * Math.random());
 
-          }, 30*1000*Math.random() );
           break;
 
         case 'starting':
@@ -56,15 +82,15 @@ const StartButton = React.createClass({
           this.setState({
             status: "stopping"
           });
-           setTimeout(() => {
+          setTimeout(() => {
             this.setState({
-            status: "stopped"
-          });
+              status: Math.random() < 0.5 ? "stopped" : "failedToStop"
+            });
 
-          }, 30*1000*Math.random() );
+          }, 30 * 1000 * Math.random());
           break;
         case 'stopping':
-       
+
           break;
         default:
           this.setState({
@@ -75,10 +101,13 @@ const StartButton = React.createClass({
     getInitialState() {
       return {
         status: "stopped",
-        started: "fa fa-stop-circle fa-lg",
+        started: "fa fa-border fa-stop-circle fa-lg",
         starting: "fa fa-hourglass-start fa-spin fa-lg",
         stopping: "fa fa-refresh fa-spin fa-lg",
-        stopped: "fa fa-play fa-lg"
+        stopped: "fa fa-border fa-play fa-lg",
+        failedToStop: "fa  fa-border fa-exclamation-triangle fa-lg",
+        failedToStart: "fa fa-border fa-exclamation-triangle fa-lg",
+        recovering: "fa fa-border fa-lg fa-cog fa-spin"
       }
     },
     toggle(evt) {
