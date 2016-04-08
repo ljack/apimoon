@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from "react-dom";
+
 import {
   Apimoons
 }
@@ -124,7 +126,15 @@ const StartButton = React.createClass({
 });
 
 const CodeComponent = React.createClass({
-  getInitialState() {
+
+  render() {
+    alert("Coming soon!");
+  }
+});
+
+const CodeButton = React.createClass({
+
+    getInitialState() {
       return {
         hover: "fa fa-lg fa-code"
       };
@@ -139,13 +149,20 @@ const CodeComponent = React.createClass({
         hover: "fa fa-lg fa-code"
       });
     },
+    click() {
+      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>);
+    },
     render: function() {
       console.log("CodeComponent: render this=", this);
 
       return (
-         <span id="code-button" onClick={this.toggle} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} title={this.state.status}><i  className={this.state.hover} /> </span>
+        <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> </span>
       );
 
+    },
+    destroy() {
+      console.log("CodeButton destroy, this=",this);
+      // ReactDOM.unmountComponentAtNode(document.fi);
     }
 });
 
@@ -159,7 +176,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <CodeComponent rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
+      <CodeButton rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent rowData={this.props.rowData} /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }
