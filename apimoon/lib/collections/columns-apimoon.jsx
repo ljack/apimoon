@@ -143,9 +143,7 @@ const CodeComponent = React.createClass({
       console.log("CodeComponent: render this=", this);
 
       return (
-        <span>
          <span id="code-button" onClick={this.toggle} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} title={this.state.status}><i  className="{this.state.hover}" /> </span>
-      </span>
       );
 
     }
