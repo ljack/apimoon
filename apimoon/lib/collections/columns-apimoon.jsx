@@ -21,7 +21,7 @@ const ApimoonColumns = ["name", "left", "middle", "right", "rowButtons"];
 // used to display object.name name part of nested object.
 const DotComponent = React.createClass({
   render: function() {
-    //console.log("DotComponent: render this=", this);
+    //// console.log("DotComponent: render this=", this);
     return (
       <span>
 		{this.props.data.name}
@@ -161,7 +161,7 @@ const CodeButton = React.createClass({
 
     },
     destroy() {
-      console.log("CodeButton destroy, this=",this);
+       console.log("CodeButton destroy, this=",this);
       // ReactDOM.unmountComponentAtNode(document.fi);
     }
 });
@@ -169,7 +169,7 @@ const CodeButton = React.createClass({
 // Component which groups row buttons
 const ButtonsComponent = React.createClass({
   render: function() {
-    console.log("ButtonsComponent: render this=", this);
+    // console.log("ButtonsComponent: render this=", this);
     const paddingStyle = {
       leftPadding: "5px"
     };
@@ -186,11 +186,11 @@ const ButtonsComponent = React.createClass({
 const DeleteComponent = React.createClass({
 
   delete(evt) {
-      console.log("DeleteComponent, evt=", evt);
+      // console.log("DeleteComponent, evt=", evt);
       evt.preventDefault();
       evt.stopPropagation();
       var id = this.props.rowData._id;
-      console.log("DeleteComponent, deleting with id=", id);
+      // console.log("DeleteComponent, deleting with id=", id);
       // eh, confirm here ? ;)
       let res = confirm("Really delete");
       if (res == true) {
@@ -202,7 +202,7 @@ const DeleteComponent = React.createClass({
       return false;
     },
     render: function() {
-      console.log("DeleteComponent: render this=", this);
+      // console.log("DeleteComponent: render this=", this);
       return (
         <span id="delete-button" onClick={this.delete} className="fa fa-trash-o fa-lg" title="Delete">
      {this.props.data}
@@ -214,7 +214,7 @@ const DeleteComponent = React.createClass({
 // Row button to "edit" the current row
 const EditComponent = React.createClass({
   edit(evt) {
-      // console.log("EditComponent, evt=", evt);
+      // // console.log("EditComponent, evt=", evt);
       // evt.preventDefault();
       // evt.stopPropagation();
       // var id = this.props.rowData._id;
@@ -223,7 +223,7 @@ const EditComponent = React.createClass({
       // return false;
     },
     render: function() {
-      console.log("EditComponent: render this=", this);
+      // console.log("EditComponent: render this=", this);
       return (
         <span id="edit-button" onClick={this.edit} className="fa fa-pencil  fa-lg" title="Edit">{this.props.data}
 			</span>
@@ -303,7 +303,7 @@ const FormOptions = {
 
 function DeleteObject(id) {
 
-  console.log("Deleting with id=", id);
+  // console.log("Deleting with id=", id);
   let collection = Apimoons;
   let selector = {
     _id: id
@@ -316,7 +316,7 @@ function DeleteObject(id) {
 function SaveCollection(document) {
 
   document = JSON.parse(JSON.stringify(document));
-  console.log("Saving values=", document);
+  // console.log("Saving values=", document);
   let collection = Apimoons;
   let selector = {
     _id: document._id
