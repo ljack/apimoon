@@ -28,15 +28,10 @@ const DotComponent = React.createClass({
   }
 });
 
-// Component which groups row buttons
+// Component to simulate start/stop failure scenario
 const StartButton = React.createClass({
-  getClass() {
-      switch (this.state.status) {
 
-      }
-    },
     forward() {
-      console.log("in forward, status=", this.state.status);
       switch (this.state.status) {
         case 'recovering':
 
@@ -107,7 +102,7 @@ const StartButton = React.createClass({
         stopped: "fa fa-border fa-play fa-lg",
         failedToStop: "fa  fa-border fa-exclamation-triangle fa-lg",
         failedToStart: "fa fa-border fa-exclamation-triangle fa-lg",
-        recovering: "fa fa-border fa-lg fa-cog fa-spin"
+        recovering: "fa  fa-lg fa-cog fa-spin"
       }
     },
     toggle(evt) {
@@ -116,7 +111,6 @@ const StartButton = React.createClass({
       this.forward();
     },
     render: function() {
-      console.log("ButtonsComponent: render this=", this);
       const paddingStyle = {
         leftPadding: "5px"
       };
