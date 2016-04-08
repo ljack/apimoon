@@ -149,7 +149,9 @@ const CodeButton = React.createClass({
         hover: "fa fa-lg fa-code"
       });
     },
-    click() {
+    click(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
       ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>);
     },
     render: function() {

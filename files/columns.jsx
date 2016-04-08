@@ -22,7 +22,7 @@ export const JsonComponent = React.createClass({
       });
     },
     render: function() {
-      console.log("JsonComponent: render this=", this);
+      //console.log("JsonComponent: render this=", this);
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
