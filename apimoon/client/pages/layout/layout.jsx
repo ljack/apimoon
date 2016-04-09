@@ -336,6 +336,13 @@ export const PrivateLayoutLeftMenu = React.createClass({
 				</span>
 			</a>
 		</li>
+		<li id="menu-item-simple" className={menuItemClass('pageapimoon_tests')}>
+			<a href={pathFor('pageapimoon_tests')}>
+				<span className="item-title">
+					API Testing
+				</span>
+			</a>
+		</li>
 		<li id="menu-item-simple" className={menuItemClass('apimoons_page')}>
 			<a href={pathFor('apimoons_page')}>
 				<span className="item-title">

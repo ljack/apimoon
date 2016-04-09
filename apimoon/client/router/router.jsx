@@ -12,6 +12,10 @@ import {PagetodosInsert} from "/client/pages/pagetodos/insert/insert.jsx";
 import {PagetodosDetails} from "/client/pages/pagetodos/details/details.jsx";
 import {PagetodosEdit} from "/client/pages/pagetodos/edit/edit.jsx";
 import {HomePrivate} from "/client/pages/home_private/home_private.jsx";
+import {PageapimoonTests} from "/client/pages/pageapimoon_tests/pageapimoon_tests.jsx";
+import {PageapimoonTestsInsert} from "/client/pages/pageapimoon_tests/insert/insert.jsx";
+import {PageapimoonTestsDetails} from "/client/pages/pageapimoon_tests/details/details.jsx";
+import {PageapimoonTestsEdit} from "/client/pages/pageapimoon_tests/edit/edit.jsx";
 import {ApimoonsPage} from "/client/pages/apimoons_page/apimoons_page.jsx";
 import {ApimoonsPageInsert} from "/client/pages/apimoons_page/insert/insert.jsx";
 import {ApimoonsPageDetails} from "/client/pages/apimoons_page/details/details.jsx";
@@ -58,6 +62,10 @@ const privateRouteNames = [
 	"pagetodos.details",
 	"pagetodos.edit",
 	"home_private",
+	"pageapimoon_tests",
+	"pageapimoon_tests.insert",
+	"pageapimoon_tests.details",
+	"pageapimoon_tests.edit",
 	"apimoons_page",
 	"apimoons_page.insert",
 	"apimoons_page.details",
@@ -421,6 +429,98 @@ privateRoutes.route("/home_private", {
     	mount(Layout, {
 			content: (
 				<HomePrivate />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pageapimoon_tests", {
+    name: "pageapimoon_tests",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PageapimoonTests />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pageapimoon_tests/insert", {
+    name: "pageapimoon_tests.insert",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PageapimoonTestsInsert />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pageapimoon_tests/details/:apimoon_testId", {
+    name: "pageapimoon_tests.details",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PageapimoonTestsDetails />
+			)
+		});
+
+    },
+	triggersExit: [
+		function(context, redirect) {
+			
+		}
+	]
+});
+
+privateRoutes.route("/pageapimoon_tests/edit/:apimoon_testId", {
+    name: "pageapimoon_tests.edit",
+
+	triggersEnter: [
+		function(context, redirect, stop) {
+			
+		}
+	],
+    action: function(routeParams, routeQuery) {
+    	mount(Layout, {
+			content: (
+				<PageapimoonTestsEdit />
 			)
 		});
 
