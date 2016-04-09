@@ -34,7 +34,7 @@ const DotComponent = React.createClass({
 const StartButton = React.createClass({
 
   forward() {
-      const baseDelay = 30*1000;
+      const baseDelay = 10*1000;
       switch (this.state.status) {
         case 'recovering':
 
