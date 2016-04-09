@@ -207,16 +207,10 @@
 						"show_in_read_only_form": true
 					}
 				],
-				"owner_field": "ownerId",
-				"roles_allowed_to_update": [
-					"owner"
-				],
-				"roles_allowed_to_delete": [
-					"owner"
-				],
-				"roles_allowed_to_download": [
-					"owner"
-				],
+				"owner_field": "",
+				"roles_allowed_to_update": [],
+				"roles_allowed_to_delete": [],
+				"roles_allowed_to_download": [],
 				"storage_adapters": [],
 				"roles_allowed_to_read": [],
 				"roles_allowed_to_insert": [],
