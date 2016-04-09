@@ -3,7 +3,7 @@
 		"title": "apimoon",
 		"collections": [
 			{
-				"name": "apimoon_tests",
+				"name": "apimoontests",
 				"type": "collection",
 				"fields": [
 					{
@@ -437,7 +437,7 @@
 		"queries": [
 			{
 				"name": "apimoon_tests",
-				"collection": "apimoon_tests",
+				"collection": "apimoontests",
 				"find_one": false,
 				"filter": {},
 				"options": {},
@@ -445,7 +445,7 @@
 			},
 			{
 				"name": "apimoon_test",
-				"collection": "apimoon_tests",
+				"collection": "apimoontests",
 				"find_one": true,
 				"filter": {
 					"_id": ":apimoon_testId"
@@ -455,7 +455,7 @@
 			},
 			{
 				"name": "apimoon_tests_empty",
-				"collection": "apimoon_tests",
+				"collection": "apimoontests",
 				"find_one": true,
 				"filter": {
 					"_id": null
