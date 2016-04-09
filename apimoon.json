@@ -2350,7 +2350,7 @@
 		"packages": {
 			"meteor": [],
 			"npm": [
-				"phantomjs"
+				"phantomjs-prebuilt"
 			],
 			"mrt": []
 		},
