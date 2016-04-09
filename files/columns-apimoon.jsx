@@ -34,6 +34,7 @@ const DotComponent = React.createClass({
 const StartButton = React.createClass({
 
   forward() {
+      const baseDelay = 30*1000;
       switch (this.state.status) {
         case 'recovering':
 
@@ -46,7 +47,7 @@ const StartButton = React.createClass({
             this.setState({
               status: Math.random() < 0.5 ? "stopped" : "started"
             });
-          }, 30 * 1000 * Math.random());
+          }, baseDelay * Math.random());
 
           break;
         case 'failedToStop':
@@ -57,7 +58,7 @@ const StartButton = React.createClass({
             this.setState({
               status: Math.random() < 0.5 ? "stopped" : "started"
             });
-          }, 30 * 1000 * Math.random());
+          }, baseDelay * Math.random());
 
           break;
         case 'stopped':
@@ -69,7 +70,7 @@ const StartButton = React.createClass({
             this.setState({
               status: Math.random() < 0.5 ? "started" : "failedToStart"
             });
-          }, 30 * 1000 * Math.random());
+          }, baseDelay * Math.random());
 
           break;
 
@@ -84,7 +85,7 @@ const StartButton = React.createClass({
               status: Math.random() < 0.5 ? "stopped" : "failedToStop"
             });
 
-          }, 30 * 1000 * Math.random());
+          }, baseDelay * Math.random());
           break;
         case 'stopping':
 

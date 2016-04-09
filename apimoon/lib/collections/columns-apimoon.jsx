@@ -152,7 +152,7 @@ const CodeButton = React.createClass({
     click(evt) {
       evt.preventDefault();
       evt.stopPropagation();
-      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>);
+      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>,document.getElementById('code-button'));
     },
     render: function() {
       console.log("CodeComponent: render this=", this);
