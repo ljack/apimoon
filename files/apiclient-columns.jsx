@@ -285,7 +285,7 @@ const ColumnMeta = [{
     "columnName": "method",
   }, {
     "columnName": "lastResult",
-    "customComponent": () =>  this.props.rowData.lastResult.slice(0,10),
+    "customComponent": () =>  console.log(this),
   }, {
 
     "columnName": "rowButtons",
