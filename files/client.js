@@ -15,7 +15,7 @@ from "/lib/collections/todos.js";
 import {
 	ApiClient
 }
-from "/lib/collections/apiclient.js";
+from "/lib/collections/apiclients.js";
 
 Meteor.startup(function() {
 
