@@ -10,6 +10,13 @@ import {
 	Todos
 }
 from "/lib/collections/todos.js";
+
+
+import {
+	ApimoonTests
+}
+from "/lib/collections/apimoon-tests.js";
+
 Meteor.startup(function() {
 
 	console.log("Client startup running at " + new Date().toISOString());
@@ -25,6 +32,7 @@ Meteor.startup(function() {
 	MyCollections = {};
 	MyCollections.Apimoons = Apimoons;
 	MyCollections.Todos = Todos;
+	MyCollections.ApimoonTests = ApimoonTests;
 	console.log(MyCollections);
 
 	let args = {
