@@ -9,6 +9,13 @@ export const JsonComponent = React.createClass({
         modalIsOpen: this.props.modalIsOpen || false,
       };
     },
+    getDefaultProps(){
+      return {
+        language:"JSON",
+        title: "JSON",
+        iconCss: "fa fa-info-circle fa-lg",
+      };  
+    },
     show(evt) {
       evt.preventDefault();
       evt.stopPropagation();
@@ -26,9 +33,9 @@ export const JsonComponent = React.createClass({
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
-              <Pretty data={this.props.rowData} language="JSON"/> 
+              <Pretty data={this.props.rowData} language={this.props.language} title={this.props.title}/> 
             </Modal>
-            <span id="json-button" onClick={this.show} className="fa fa-info-circle fa-lg" title="Show JSON"></span>
+            <span id="json-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
       </span>);
 
     }

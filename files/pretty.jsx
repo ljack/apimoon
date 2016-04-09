@@ -2,7 +2,12 @@ import React from "react";
 import Highlight from 'react-highlight';
 
 export default React.createClass({
-
+    getDefaultProps() {
+      return {
+          title: "Pretty Debug",
+          language: "JSON"
+      }  
+    },
     style: {
         backgroundColor: '#1f4662',
         color: '#fff',
@@ -39,10 +44,10 @@ export default React.createClass({
         return (
             <div style={this.style}>
                 <div style={this.headerStyle} onClick={ this.toggle }>
-                    <strong>Pretty Debug</strong>
+                    <strong>{this.props.title}</strong>
                 </div>
                 {( this.state.show ?
-                    <Highlight className="JSON">
+                    <Highlight className={this.props.language}>
                         {JSON.stringify(this.props.data, null, 2) }
                     </Highlight> : false )}
             </div>
