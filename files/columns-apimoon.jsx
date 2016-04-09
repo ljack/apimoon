@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {MyCollection} from "/lib/collections/apiclient.js";
-
-import FormSchema from '/lib/collections/apimoon-schema.js';
+import {
+  Apimoons
+}
+from "/lib/collections/apimoons.js";
+import FormSchema from '/lib/collections/schema-apimoon.js';
 
 import {
   JsonComponent
@@ -305,7 +307,7 @@ const FormOptions = {
 function DeleteObject(id) {
 
   // console.log("Deleting with id=", id);
-  let collection = MyCollection;
+  let collection = Apimoons;
   let selector = {
     _id: id
   };
@@ -318,7 +320,7 @@ function SaveCollection(document) {
 
   document = JSON.parse(JSON.stringify(document));
   // console.log("Saving values=", document);
-  let collection = MyCollection;
+  let collection = Apimoons;
   let selector = {
     _id: document._id
   };
