@@ -2350,7 +2350,7 @@
 		"packages": {
 			"npm": [
 				"phantomjs-prebuilt",
-				"isomorphic-fetch ",
+				"isomorphic-fetch",
 				"es6-promise"
 			],
 			"meteor": [],
