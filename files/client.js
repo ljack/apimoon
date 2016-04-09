@@ -13,7 +13,7 @@ from "/lib/collections/todos.js";
 
 
 import {
-	ApiClient
+	Apiclients
 }
 from "/lib/collections/apiclients.js";
 
@@ -32,7 +32,7 @@ Meteor.startup(function() {
 	MyCollections = {};
 	MyCollections.Apimoons = Apimoons;
 	MyCollections.Todos = Todos;
-	MyCollections.ApiClient = ApiClient;
+	MyCollections.Apiclients = Apiclients;
 	console.log(MyCollections);
 
 	let args = {
