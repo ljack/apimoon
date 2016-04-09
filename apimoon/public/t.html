@@ -89,15 +89,15 @@ New collection name (in singular form, e.g. "product") and press TAB.
 //  copy to application.json / "pages": 
 
 {  
-   "name":"PageTEMPLATEs",
+   "name":"TEMPLATEsPage",
    "type":"page",
    "components":[  
       {  
          "name":"view",
          "query_name":"TEMPLATEs",
-         "insert_route":"PageTEMPLATEs.insert",
-         "details_route":"PageTEMPLATEs.details",
-         "edit_route":"PageTEMPLATEs.edit",
+         "insert_route":"TEMPLATEsPage.insert",
+         "details_route":"TEMPLATEsPage.details",
+         "edit_route":"TEMPLATEsPage.edit",
          "type":"data_view",
          "details_route_params":[  
             {  
@@ -123,8 +123,8 @@ New collection name (in singular form, e.g. "product") and press TAB.
                "title":"New TEMPLATE",
                "query_name":"TEMPLATEs_empty",
                "mode":"insert",
-               "submit_route":"PageTEMPLATEs",
-               "cancel_route":"PageTEMPLATEs",
+               "submit_route":"TEMPLATEsPage",
+               "cancel_route":"TEMPLATEsPage",
                "type":"form"
             }
          ]
@@ -140,8 +140,8 @@ New collection name (in singular form, e.g. "product") and press TAB.
                "name":"details_form",
                "query_name":"TEMPLATE",
                "mode":"read_only",
-               "close_route":"PageTEMPLATEs",
-               "back_route":"PageTEMPLATEs",
+               "close_route":"TEMPLATEsPage",
+               "back_route":"TEMPLATEsPage",
                "type":"form"
             }
          ]
@@ -158,16 +158,16 @@ New collection name (in singular form, e.g. "product") and press TAB.
                "title":"Edit TEMPLATE",
                "query_name":"TEMPLATE",
                "mode":"update",
-               "submit_route":"PageTEMPLATEs",
-               "cancel_route":"PageTEMPLATEs",
+               "submit_route":"TEMPLATEsPage",
+               "cancel_route":"TEMPLATEsPage",
                "type":"form"
             }
          ]
       }
    ],
 					"imports": [
-						"import FormSchema from '/lib/collections/schema-TEMPLATE.js';",
-						"import {TableColumns, ColumnMeta,FormOptions,SaveCollection} from '/lib/collections/columns-TEMPLATE.jsx';"
+						"import FormSchema from '/lib/collections/TEMPLATE-schema.js';",
+						"import {TableColumns, ColumnMeta,FormOptions,SaveCollection} from '/lib/collections/TEMPLATE-columns.jsx';"
 					]
 }
 
@@ -175,7 +175,7 @@ New collection name (in singular form, e.g. "product") and press TAB.
 // copy to wanted menu definition in application.json. Below "components": [{"name": "left_menu","type": "menu" ...
                   {
 							"title": "TEMPLATEs",
-							"route": "PageTEMPLATEs"
+							"route": "TEMPLATEsPage"
                   }
 						
 
@@ -183,12 +183,12 @@ New collection name (in singular form, e.g. "product") and press TAB.
 "copy_files": [
 		
 			{
-				"source": "files/schema-TEMPLATE.js",
-				"dest": "BOTH_COLLECTIONS_DIR/schema-TEMPLATE.js"
+				"source": "files/TEMPLATE-schema.js",
+				"dest": "BOTH_COLLECTIONS_DIR/TEMPLATE-schema.js"
 			},
 			{
-				"source": "files/columns-TEMPLATE.jsx",
-				"dest": "BOTH_COLLECTIONS_DIR/columns-TEMPLATE.jsx"
+				"source": "files/TEMPLATE-columns.jsx",
+				"dest": "BOTH_COLLECTIONS_DIR/TEMPLATE-columns.jsx"
 			}
 ]
 </pre>
