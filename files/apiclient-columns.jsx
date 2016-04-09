@@ -81,8 +81,8 @@ const StartButton = React.createClass({
               return response.text();
             })
             .then(function(stories) {
-              console.log("stories=",stories);
-               me.setState({
+              console.log("stories=", stories);
+              me.setState({
                 status: "stopped"
               });
               let id = me.props.rowData._id;
@@ -94,7 +94,7 @@ const StartButton = React.createClass({
               }, {
                 $set: values
               })
-            
+
             });
 
           break;
@@ -273,6 +273,8 @@ const ListComponent = React.createClass({
   }
 });
 
+
+
 // now register the DotComponent as customComponent for the specified fields
 const ColumnMeta = [{
     "columnName": "name",
@@ -281,6 +283,9 @@ const ColumnMeta = [{
     "displayName": "URL"
   }, {
     "columnName": "method",
+  }, {
+    "columnName": "lastResult",
+    "customComponent": () =>  this.props.rowData.lastResult.slice(0,10),
   }, {
 
     "columnName": "rowButtons",
