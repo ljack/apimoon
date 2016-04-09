@@ -13,9 +13,9 @@ from "/lib/collections/todos.js";
 
 
 import {
-	ApimoonTests
+	ApiClient
 }
-from "/lib/collections/apimoontests.js";
+from "/lib/collections/apiclient.js";
 
 Meteor.startup(function() {
 
@@ -32,7 +32,7 @@ Meteor.startup(function() {
 	MyCollections = {};
 	MyCollections.Apimoons = Apimoons;
 	MyCollections.Todos = Todos;
-	MyCollections.ApimoonTests = ApimoonTests;
+	MyCollections.ApiClient = ApiClient;
 	console.log(MyCollections);
 
 	let args = {
