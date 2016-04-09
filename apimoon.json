@@ -2022,7 +2022,7 @@
 				"dest": "BOTH_LIB_DIR/columns.jsx"
 			}
 		],
-		"use_collection2": true,
+		"use_collection2": false,
 		"footer_text": "Check source code at GitHub: <a href=\"https://github.com/ljack/apimoon\">https://github.com/ljack/apimoon</a> and <a href=\"https://github.com/ljack/kitchen-templates/\">https://github.com/ljack/kitchen-templates/</a>",
 		"meta_description": "",
 		"meta_title": "",
