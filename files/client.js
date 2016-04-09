@@ -15,7 +15,7 @@ from "/lib/collections/todos.js";
 import {
 	ApimoonTests
 }
-from "/lib/collections/apimoon-tests.js";
+from "/lib/collections/apimoontests.js";
 
 Meteor.startup(function() {
 
