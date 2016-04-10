@@ -227,13 +227,15 @@ const CodeButton = React.createClass({
     click(evt) {
       evt.preventDefault();
       evt.stopPropagation();
-      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>, document.getElementById('code-button'));
+      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>, document.getElementById('code-component'));
     },
     render: function() {
       console.log("CodeComponent: render this=", this);
 
       return (
-        <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> </span>
+        <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> 
+         <span id="code-component"/>
+        </span>
       );
 
     },
