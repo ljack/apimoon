@@ -200,8 +200,9 @@ const ControlledModal = React.createClass({
     }
 });
 const CodeComponent = React.createClass({
-
+  
   render() {
+    console.log("CodeComponent render, this=",this);
     return (<ControlledModal title="Code"> <span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
