@@ -32,7 +32,7 @@ export const JsonComponent = React.createClass({
       //console.log("JsonComponent: render this=", this);
       let data = "";
       try {
-        data = JSON.parse( this.pros.lastResult);
+        data = JSON.parse( this.props.lastResult);
       } catch(error) {
         console.log("JSONParse, error=",error);
       }
