@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import polyfill from "es6-promise";
 import fetch from 'isomorphic-fetch';
+import Modal from 'react-modal';
 
 import {
   Apiclients as PageCollection
@@ -151,10 +152,57 @@ const StartButton = React.createClass({
     }
 });
 
+const ControlledModal = React.createClass({
+
+  getInitialState() {
+      return {
+        showModal: false
+      };
+    },
+    getDefaultProps: function() {
+      return {
+        title: 'default value',
+        body: "Content here"
+      };
+    },
+    close() {
+      this.setState({
+        showModal: false
+      });
+    },
+
+    open() {
+      this.setState({
+        showModal: true
+      });
+    },
+
+    render() {
+      return (
+        <div>
+        <Button onClick={this.open}>
+          Launch modal
+        </Button>
+
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.props.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>{this.props.body}{ this.props.children }</div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+      );
+    }
+});
 const CodeComponent = React.createClass({
 
   render() {
-    alert("Coming soon!");
+    return (<ControlledModal title="Code"> <span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
 
@@ -285,7 +333,7 @@ const ColumnMeta = [{
     "columnName": "method",
   }, {
     "columnName": "lastResult",
-    "customComponent": (props) =>  <span>{props.rowData.lastResult.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>,
+    "customComponent": (props) => <span>{props.rowData.lastResult.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>,
   }, {
 
     "columnName": "rowButtons",
