@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 import polyfill from "es6-promise";
 import fetch from 'isomorphic-fetch';
 import Modal from 'react-modal';
-import {callRest} from '/lib/methods.js'
+import {
+  callRest
+}
+from '/lib/methods.js'
 import {
   Apiclients as PageCollection
 }
@@ -72,14 +75,18 @@ const StartButton = React.createClass({
 
           if (this.props.rowData.runFromServer) {
             // http://guide.meteor.com/methods.html#advanced-boilerplate
-              callRest.call( this.props.rowData ),(err,res) => {
-                if( err ) {
-                  alert(err);
-                  console.log("callRest err=",err);
-                }else {
-                  console.log("callRest res=",res);
-                }
-              };
+            callRest.call(this.props.rowData), (err, res) => {
+              if (err) {
+                alert(err);
+                console.log("callRest err=", err);
+              }
+              else {
+                console.log("callRest res=", res);
+              }
+            };
+            this.setState({
+              status: "started"
+            });
           }
           else {
 
