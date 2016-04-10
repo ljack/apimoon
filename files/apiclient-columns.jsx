@@ -340,7 +340,7 @@ const ColumnMeta = [{
       let r=props.rowData.lastResult;
       if( r!=null ) return(
           <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
-      else return "";}
+      else return <noscript/>;}
   }, {
 
     "columnName": "rowButtons",
