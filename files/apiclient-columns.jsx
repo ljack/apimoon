@@ -275,7 +275,7 @@ const ListComponent = React.createClass({
 
 
 
-// now register the DotComponent as customComponent for the specified fields
+// GriddleGriddle ColumnMeta's with some custom components 
 const ColumnMeta = [{
     "columnName": "name",
   }, {
