@@ -180,9 +180,9 @@ const ControlledModal = React.createClass({
     render() {
       return (
         <div>
-        <Button onClick={this.open}>
+        <button onClick={this.open}>
           Launch modal
-        </Button>
+        </button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
