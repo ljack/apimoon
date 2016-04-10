@@ -2347,7 +2347,9 @@
 				"isomorphic-fetch",
 				"es6-promise"
 			],
-			"meteor": [],
+			"meteor": [
+				"mdg:validated-method"
+			],
 			"mrt": []
 		},
 		"copy_files": [

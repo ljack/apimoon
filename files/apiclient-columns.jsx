@@ -69,44 +69,52 @@ const StartButton = React.createClass({
           this.setState({
             status: "starting"
           });
-          
-          var me = this;
-          var update= (lastResult) => {
+
+          if (this.props.rowData.runFromServer) {
+              
+          }
+          else {
+
+
+            var me = this;
+            var update = (lastResult) => {
               let id = me.props.rowData._id;
-              let values={};
+              let values = {};
               values.lastResult = lastResult;
               me.PageCollection.update({
                 _id: id
               }, {
                 $set: values
               })
-          };
+            };
 
-          
-          me.PageCollection = PageCollection;
-          fetch(this.props.rowData.url, { credentials: 'include'})
-            .then(function(response) {
-              if (response.status >= 400) {
+
+            me.PageCollection = PageCollection;
+            fetch(this.props.rowData.url, {
+                credentials: 'include'
+              })
+              .then(function(response) {
+                if (response.status >= 400) {
+                  me.setState({
+                    status: "failedToStart"
+                  });
+                  throw new Error("Bad response from server");
+                }
+                return response.text();
+              }).catch(function(error) {
+
+                console.log("error=", error);
+                update(error);
+              })
+              .then(function(stories) {
+                console.log("stories=", stories);
                 me.setState({
-                  status: "failedToStart"
+                  status: "stopped"
                 });
-                throw new Error("Bad response from server");
-              }
-              return response.text();
-            }).catch(function(error) {
-              
-              console.log("error=",error);
-              update(error);
-            })
-            .then(function(stories) {
-              console.log("stories=", stories);
-              me.setState({
-                status: "stopped"
+                update(stories);
+
               });
-              update(stories);
-
-            });
-
+          }
           break;
 
         case 'starting':
