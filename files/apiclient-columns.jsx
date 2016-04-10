@@ -289,7 +289,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <CodeButton rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent title="lastResult" rowData={JSON.parse( this.props.rowData.lastResult )} /> <StartButton rowData={this.props.rowData}/>
+      <CodeButton rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent title="lastResult" rowData={ this.props.rowData.lastResult } /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }

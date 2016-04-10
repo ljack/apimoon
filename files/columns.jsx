@@ -30,10 +30,16 @@ export const JsonComponent = React.createClass({
     },
     render: function() {
       //console.log("JsonComponent: render this=", this);
+      let data = "";
+      try {
+        data = JSON.parse( this.pros.lastResult);
+      } catch(error) {
+        console.log("JSONParse, error=",error);
+      }
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
-              <Pretty data={this.props.rowData} language={this.props.language} title={this.props.title}/> 
+              <Pretty data={data} language={this.props.language} title={this.props.title}/> 
             </Modal>
             <span id="json-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
       </span>);
