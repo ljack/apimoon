@@ -71,6 +71,7 @@ const StartButton = React.createClass({
           });
 
           if (this.props.rowData.runFromServer) {
+            // http://guide.meteor.com/methods.html#advanced-boilerplate
               callRest.call( this.props.rowData ),(err,res) => {
                 if( err ) {
                   alert(err);
