@@ -69,35 +69,45 @@ const StartButton = React.createClass({
           this.setState({
             status: "starting"
           });
-          var me = this;
-          me.PageCollection = PageCollection;
-          fetch(this.props.rowData.url)
-            .then(function(response) {
-              if (response.status >= 400) {
-                me.setState({
-                  status: "failedToStart"
-                });
-                throw new Error("Bad response from server");
-              }
-              return response.text();
-            })
-            .then(function(stories) {
-              console.log("stories=", stories);
-              me.setState({
-                status: "stopped"
-              });
-              let id = me.props.rowData._id;
-              let values = {};
-              values.lastResult = stories;
-              // update collection with latest result value
-              me.PageCollection.update({
-                _id: id
-              }, {
-                $set: values
+
+          try {
+
+
+            var me = this;
+            me.PageCollection = PageCollection;
+            fetch(this.props.rowData.url)
+              .then(function(response) {
+                if (response.status >= 400) {
+                  me.setState({
+                    status: "failedToStart"
+                  });
+                  throw new Error("Bad response from server");
+                }
+                return response.text();
               })
+              .then(function(stories) {
+                console.log("stories=", stories);
+                me.setState({
+                  status: "stopped"
+                });
+                let id = me.props.rowData._id;
+                let values = {};
+                values.lastResult = stories;
+                // update collection with latest result value
+                me.PageCollection.update({
+                  _id: id
+                }, {
+                  $set: values
+                })
 
+              });
+          }
+          catch (err) {
+            me.setState({
+              status: "failedToStart",
+              error: err.message
             });
-
+          }
           break;
 
         case 'starting':
@@ -200,9 +210,9 @@ const ControlledModal = React.createClass({
     }
 });
 const CodeComponent = React.createClass({
-  
+
   render() {
-    console.log("CodeComponent render, this=",this);
+    console.log("CodeComponent render, this=", this);
     return (<ControlledModal title="Code"> <span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
@@ -337,10 +347,11 @@ const ColumnMeta = [{
   }, {
     "columnName": "lastResult",
     "customComponent": (props) => {
-      let r=props.rowData.lastResult;
-      if( r!=null ) return(
-          <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
-      else return <noscript/>;}
+      let r = props.rowData.lastResult;
+      if (r != null) return (
+        <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
+      else return <noscript/>;
+    }
   }, {
 
     "columnName": "rowButtons",
