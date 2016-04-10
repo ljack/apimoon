@@ -69,9 +69,20 @@ const StartButton = React.createClass({
           this.setState({
             status: "starting"
           });
-
-
+          
           var me = this;
+          var update= (lastResult) => {
+              let id = me.props.rowData._id;
+              let values={};
+              values.lastResult = lastResult;
+              me.PageCollection.update({
+                _id: id
+              }, {
+                $set: values
+              })
+          };
+
+          
           me.PageCollection = PageCollection;
           fetch(this.props.rowData.url, { credentials: 'include'})
             .then(function(response) {
@@ -85,21 +96,14 @@ const StartButton = React.createClass({
             }).catch(function(error) {
               
               console.log("error=",error);
+              update(error);
             })
             .then(function(stories) {
               console.log("stories=", stories);
               me.setState({
                 status: "stopped"
               });
-              let id = me.props.rowData._id;
-              let values = {};
-              values.lastResult = stories;
-              // update collection with latest result value
-              me.PageCollection.update({
-                _id: id
-              }, {
-                $set: values
-              })
+              update(stories);
 
             });
 
