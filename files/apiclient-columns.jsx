@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import polyfill from "es6-promise";
 import fetch from 'isomorphic-fetch';
 import Modal from 'react-modal';
-
+import {callRest} from '/lib/methods.js'
 import {
   Apiclients as PageCollection
 }
@@ -71,7 +71,14 @@ const StartButton = React.createClass({
           });
 
           if (this.props.rowData.runFromServer) {
-              
+              callRest.call( this.props.rowData ),(err,res) => {
+                if( err ) {
+                  alert(err);
+                  console.log("callRest err=",err);
+                }else {
+                  console.log("callRest res=",res);
+                }
+              };
           }
           else {
 
