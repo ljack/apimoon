@@ -75,7 +75,7 @@ const StartButton = React.createClass({
             status: "starting"
           });
 
-          if (this.props.rowData.runFromServer) {
+          if (this.props.rowData.runFromServer == true) {
             // http://guide.meteor.com/methods.html#advanced-boilerplate
             callRest.call(this.props.rowData), (err, res) => {
               if (err) {
@@ -372,7 +372,7 @@ const ColumnMeta = [{
     "columnName": "lastResult",
     "customComponent": (props) => {
       let r = props.rowData.lastResult;
-      if (r != null) return (
+      if (r != null && r.slice ) return (
         <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
       else return <noscript/>;
     }
