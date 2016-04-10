@@ -70,44 +70,39 @@ const StartButton = React.createClass({
             status: "starting"
           });
 
-          try {
 
-
-            var me = this;
-            me.PageCollection = PageCollection;
-            fetch(this.props.rowData.url)
-              .then(function(response) {
-                if (response.status >= 400) {
-                  me.setState({
-                    status: "failedToStart"
-                  });
-                  throw new Error("Bad response from server");
-                }
-                return response.text();
-              })
-              .then(function(stories) {
-                console.log("stories=", stories);
+          var me = this;
+          me.PageCollection = PageCollection;
+          fetch(this.props.rowData.url)
+            .then(function(response) {
+              if (response.status >= 400) {
                 me.setState({
-                  status: "stopped"
+                  status: "failedToStart"
                 });
-                let id = me.props.rowData._id;
-                let values = {};
-                values.lastResult = stories;
-                // update collection with latest result value
-                me.PageCollection.update({
-                  _id: id
-                }, {
-                  $set: values
-                })
-
+                throw new Error("Bad response from server");
+              }
+              return response.text();
+            }).catch(function(error) {
+              
+              console.log("error=",error);
+            })
+            .then(function(stories) {
+              console.log("stories=", stories);
+              me.setState({
+                status: "stopped"
               });
-          }
-          catch (err) {
-            me.setState({
-              status: "failedToStart",
-              error: err.message
+              let id = me.props.rowData._id;
+              let values = {};
+              values.lastResult = stories;
+              // update collection with latest result value
+              me.PageCollection.update({
+                _id: id
+              }, {
+                $set: values
+              })
+
             });
-          }
+
           break;
 
         case 'starting':
