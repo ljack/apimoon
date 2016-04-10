@@ -68,7 +68,9 @@ const StartButton = React.createClass({
           }, baseDelay * Math.random());
 
           break;
+          
         case 'stopped':
+
           this.setState({
             status: "starting"
           });
