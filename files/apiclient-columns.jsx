@@ -108,7 +108,7 @@ const StartButton = React.createClass({
 
             me.PageCollection = PageCollection;
             fetch(this.props.rowData.url, {
-                credentials: 'include'
+               
               })
               .then(function(response) {
                 if (response.status >= 400) {
