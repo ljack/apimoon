@@ -2348,7 +2348,8 @@
 				"es6-promise"
 			],
 			"meteor": [
-				"mdg:validated-method"
+				"mdg:validated-method",
+				"promise"
 			],
 			"mrt": []
 		},
