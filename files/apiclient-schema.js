@@ -16,7 +16,8 @@ export default function() {
     url: t.String, // a required string
     method: t.enums.of("GET POST DELETE PUT"),
     params: t.maybe(t.list(t.String)),
-    lastResult: t.maybe( t.String)
+    lastResult: t.maybe( t.String),
+    makeCallFromServer: t.Boolean,
   });
   return ApiClientSchema;
 }

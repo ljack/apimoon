@@ -73,7 +73,7 @@ const StartButton = React.createClass({
 
           var me = this;
           me.PageCollection = PageCollection;
-          fetch(this.props.rowData.url)
+          fetch(this.props.rowData.url, { credentials: 'include'})
             .then(function(response) {
               if (response.status >= 400) {
                 me.setState({
