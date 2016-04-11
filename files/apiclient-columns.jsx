@@ -290,7 +290,9 @@ const CodeComponent = React.createClass({
 });
 
 const CodeButton = React.createClass({
-
+  componentWillReceiveProps(nextProps) {
+    console.log("CodeButton componentWillReceiveProps nextProps=",nextProps);
+  },
   getInitialState() {
       return {
         hover: "fa fa-lg fa-code"
