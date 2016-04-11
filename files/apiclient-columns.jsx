@@ -7,10 +7,8 @@ import {
   callRest
 }
 from '/lib/methods.js'
-import {
-  Apiclients as PageCollection
-}
-from "/lib/collections/apiclients.js";
+
+import {Apiclients as PageCollection } from "/lib/collections/apiclients.js";
 
 import FormSchema from '/lib/collections/apiclient-schema.js';
 
@@ -70,7 +68,15 @@ const StartButton = React.createClass({
           break;
 
         case 'stopped':
-
+          let id = this.props.rowData._id;
+          let values = {};
+          values.lastResult = "starting..";
+          PageCollection.update({
+            _id: id
+          }, {
+            $set: values
+          });
+          
           this.setState({
             status: "starting"
           });
@@ -219,8 +225,8 @@ const CodeComponent = React.createClass({
         modalIsOpen: false
       });
     },
-    run() {
-      
+    deleteObject() {
+      console.log("deleteObject, this=", this);
     },
     render() {
       var options = {
@@ -231,11 +237,11 @@ const CodeComponent = React.createClass({
             <div className="col-md-4"> 
               		<form  onSubmit={this.onSubmit}>
         						<t.form.Form ref="form" type={FormSchema()} options={CodeFormOptions}  value={this.props.rowData}/>
-        						<div className="form-group">
+        						<div className="btn-toolbar" role="toolbar">
           							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
           							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
           							<button onClick={this.deleteObject} className="btn btn-secondary DELETE_BUTTON_CLASS">Delete</button>
-          							<StartButton rowData={this.props.rowData}/>
+          							<div class="btn-group" role="group"><StartButton rowData={this.props.rowData}/></div>
         						</div>
       						</form>
             </div>
