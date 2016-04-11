@@ -372,7 +372,7 @@ const ColumnMeta = [{
     "columnName": "lastResult",
     "customComponent": (props) => {
       let r = props.rowData.lastResult;
-      if (r != null && r.slice ) return (
+      if (r instanceof "string" ) return (
         <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
       else return <noscript/>;
     }
