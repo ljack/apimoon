@@ -191,7 +191,6 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
-    //console.log("CodeComponent render, this=", this);
     return (<ControlledModal title="Code" showModal={true}><span>Code coming </span> </ControlledModal>);
   }
 });
