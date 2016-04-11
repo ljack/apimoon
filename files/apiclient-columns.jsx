@@ -189,7 +189,7 @@ const ControlledModal = React.createClass({
     },
     componentWillReceiveProps: function(nextProps) {
       // https://facebook.github.io/react/docs/component-specs.html
-      console.log("componentWillReceiveProps, nextProps=",nextProps);
+      console.log("componentWillReceiveProps, nextProps=", nextProps);
       this.setState({
         showModal: nextProps.showModal
       });
@@ -211,10 +211,25 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
+    var options = {
+      lineNumbers: true
+    };
     return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}>
-              <Codemirror value={this.props.rowData.left.code}/>
-              <Codemirror value={this.props.rowData.middle.code}/>
-              <Codemirror value={this.props.rowData.right.code}/>
+    
+            <div class="col-md-4"> 
+              		<form  onSubmit={this.onSubmit}>
+        						<t.form.Form ref="form" type={FormSchema} options={FormOptions}  value={this.props.rowData}/>
+        						<div className="form-group">
+          							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
+          							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
+          							<button onClick={this.deleteObject} className="btn btn-secondary DELETE_BUTTON_CLASS">Delete</button>
+        						</div>
+      						</form>
+            </div>
+            <div class="col-md-4"> </div>
+            <div class="col-md-4"> 
+              {this.props.rowData.lastResult}
+            </div>
               
               
             </ControlledModal>);
