@@ -68,7 +68,7 @@ const StartButton = React.createClass({
           }, baseDelay * Math.random());
 
           break;
-          
+
         case 'stopped':
 
           this.setState({
@@ -335,10 +335,8 @@ const ColumnMeta = [{
     "columnName": "lastResult",
     "customComponent": (props) => {
       let r = props.rowData.lastResult;
-      console.log("r=",r);
-      if (r instanceof String ) return (
+      return (
         <span>{r.slice(0,80).replace(/\s*/g,"").slice(0,30)+".."}</span>);
-      else return <noscript/>;
     }
   }, {
 
