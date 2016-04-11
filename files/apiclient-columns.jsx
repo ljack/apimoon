@@ -190,7 +190,7 @@ const ControlledModal = React.createClass({
       
       return (
         <span key={this.props.rowData._id}>
-         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.showModal}>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.showModal()}>
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
             </Modal>
