@@ -186,6 +186,7 @@ const ControlledModal = React.createClass({
       });
     },
     componentWillReceiveProps: function(nextProps) {
+      // https://facebook.github.io/react/docs/component-specs.html
       console.log("componentWillReceiveProps, nextProps=",nextProps);
       this.setState({
         showModal: nextProps.showModal
