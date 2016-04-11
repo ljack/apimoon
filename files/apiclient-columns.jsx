@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Modal from 'react-modal';
 import Codemirror from 'react-codemirror';
-
+import t from 'tcomb-form';
 import {
   callRest
 }
