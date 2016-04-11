@@ -8,7 +8,10 @@ import {
 }
 from '/lib/methods.js'
 
-import {Apiclients as PageCollection } from "/lib/collections/apiclients.js";
+import {
+  Apiclients as PageCollection
+}
+from "/lib/collections/apiclients.js";
 
 import FormSchema from '/lib/collections/apiclient-schema.js';
 
@@ -76,7 +79,7 @@ const StartButton = React.createClass({
           }, {
             $set: values
           });
-          
+
           this.setState({
             status: "starting"
           });
@@ -225,8 +228,37 @@ const CodeComponent = React.createClass({
         modalIsOpen: false
       });
     },
-    deleteObject() {
-      console.log("deleteObject, this=", this);
+    deleteObject(evt) {
+      evt.preventDefault();
+      console.log("deleteObject, evt=", evt);
+      // note that this doesn't allow delete if validation is failing, fixing this later ;)
+      const value = this.refs.form.getValue();
+      if (value) {
+        let id = value._id;
+        DeleteObject(id);
+        this.closeModal();
+      }
+      else {
+        console.log("Unable to delete.. maybe validation is failing ;)");
+      }
+
+    },
+    onSubmit(evt) {
+      console.log("onSubmit evt=", evt);
+      console.log("onSubmit this=", this);
+      evt.preventDefault();
+      const value = this.refs.form.getValue();
+
+      console.log("onSubmit value=", value);
+      if (value) {
+        SaveCollection(value);
+        this.closeModal();
+      }
+      else {
+        console.log("Validation error on form:");
+        console.log(this.refs.form);
+      }
+      return;
     },
     render() {
       var options = {
@@ -383,7 +415,7 @@ const ColumnMeta = [{
     "columnName": "lastResult",
     "customComponent": (props) => {
       let r = props.rowData.lastResult;
-      let msg = (""+r).slice(0,80).replace(/\s*/g,"").slice(0,30)+"..";
+      let msg = ("" + r).slice(0, 80).replace(/\s*/g, "").slice(0, 30) + "..";
       return (
         <span>{msg}</span>);
     }
