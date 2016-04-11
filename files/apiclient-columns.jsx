@@ -151,7 +151,7 @@ const ControlledModal = React.createClass({
 
   getInitialState() {
       return {
-        showModal: this.props.showModal || false
+        showModal: true
       };
     },
     getDefaultProps: function() {
@@ -174,20 +174,20 @@ const ControlledModal = React.createClass({
 
     render() {
       return (
-        <div>
+        <span>
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
               { this.props.children }
             </Modal>
             <span id="open-code-modal-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
-        </div>
+        </span>
       );
     }
 });
 const CodeComponent = React.createClass({
 
   render() {
-    console.log("CodeComponent render, this=", this);
+    //console.log("CodeComponent render, this=", this);
     return (<ControlledModal title="Code" showModal={true}><span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
