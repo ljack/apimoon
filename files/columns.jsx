@@ -9,12 +9,12 @@ export const JsonComponent = React.createClass({
         modalIsOpen: this.props.modalIsOpen || false,
       };
     },
-    getDefaultProps(){
+    getDefaultProps() {
       return {
-        language:"JSON",
+        language: "JSON",
         title: "JSON",
         iconCss: "fa fa-info-circle fa-lg",
-      };  
+      };
     },
     show(evt) {
       evt.preventDefault();
@@ -32,9 +32,11 @@ export const JsonComponent = React.createClass({
       //console.log("JsonComponent: render this=", this);
       let data = "";
       try {
-        data = JSON.parse( this.props.rowData.lastResult);
-      } catch(error) {
-        console.log("JSONParse, error=",error);
+        if (this.props.rowData.lastResult)
+          data = JSON.parse(this.props.rowData.lastResult);
+      }
+      catch (error) {
+        console.log("JsonComponent, JSON.parse, error=", error);
       }
       return (<span>
             <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
