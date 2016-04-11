@@ -44,7 +44,7 @@ export const callRest = new ValidatedMethod({
                 }
             };
             try {
-                var data = HTTP.call(rowData.method, rowData.url, options);
+                let data = HTTP.call(rowData.method, rowData.url, options);
                 update(data);
             }
             catch (err) {
