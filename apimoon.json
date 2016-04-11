@@ -2343,13 +2343,12 @@
 		},
 		"packages": {
 			"npm": [
-				"phantomjs-prebuilt",
-				"isomorphic-fetch",
-				"node-rest-client"
+				"phantomjs-prebuilt"
 			],
 			"meteor": [
 				"mdg:validated-method",
-				"promise"
+				"promise",
+				"http"
 			],
 			"mrt": []
 		},
