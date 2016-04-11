@@ -179,7 +179,7 @@ const ControlledModal = React.createClass({
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
             </Modal>
-            <span id="open-code-modal-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
+            <span id="open-code-modal-button" onClick={this.open} className={this.props.iconCss} title={this.props.title}></span>
         </span>
       );
     }
