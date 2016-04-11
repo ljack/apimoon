@@ -181,6 +181,7 @@ const ControlledModal = React.createClass({
       this.setState({showModal:true});
     },
     render() {
+      this.setState( {showModal: this.props.showModal || true});
       return (
         <span>
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
