@@ -175,7 +175,10 @@ const ControlledModal = React.createClass({
         showModal: true
       });
     },
-
+    componentWillMount() {
+      console.log("componentWillMount, this=",this);
+      this.setState({showModal:true});
+    },
     render() {
       return (
         <span>
