@@ -326,6 +326,14 @@ const CodeButton = React.createClass({
     }
 });
 
+const NavigateButton = React.createClass( {
+  render() {
+    console.log("trying to navigate to..");
+    FlowRouter.go("/apiclients_page/edit/", {apiclientId: this.props.rowData._id});
+    
+  }  
+} );
+
 // Component which groups row buttons
 const ButtonsComponent = React.createClass({
   render: function() {
@@ -336,7 +344,7 @@ const ButtonsComponent = React.createClass({
 
     return (
       <form className="form-inline" style={paddingStyle}>
-      <CodeButton rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent title="lastResult" rowData={ this.props.rowData } /> <StartButton rowData={this.props.rowData}/>
+      <NavigateButton rowData={this.props.rowData} targetPage="details/details.jsx"/> <CodeButton rowData={this.props.rowData} /> <EditComponent rowData={this.props.rowData} /> <DeleteComponent rowData={this.props.rowData} /> <JsonComponent title="lastResult" rowData={ this.props.rowData } /> <StartButton rowData={this.props.rowData}/>
 		</form>
     );
   }
