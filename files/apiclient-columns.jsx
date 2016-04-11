@@ -184,7 +184,7 @@ const ControlledModal = React.createClass({
       this.setState({showModal:true});
     },
     showModal() {
-      return 
+      return this.state.showModal;
     },
     render() {
       
