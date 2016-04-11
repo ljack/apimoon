@@ -150,6 +150,7 @@ const StartButton = React.createClass({
 const ControlledModal = React.createClass({
 
   getInitialState() {
+      console.log("getInitialState, this=",this);
       return {
         showModal: true
       };
