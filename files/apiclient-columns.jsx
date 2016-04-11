@@ -162,13 +162,14 @@ const ControlledModal = React.createClass({
         showModal: true
       };
     },
+    
     close(evt) {
       evt.preventDefault();
       evt.stopPropagation();
       this.setState({
         showModal: false
       });
-      this.props.showModal=false;
+      
     },
 
     open(evt) {
@@ -177,17 +178,19 @@ const ControlledModal = React.createClass({
       this.setState({
         showModal: true
       });
-      this.props.showModal=true;
     },
     componentWillMount() {
       console.log("componentWillMount, this=",this);
       this.setState({showModal:true});
     },
+    showModal() {
+      return 
+    },
     render() {
       
       return (
-        <span>
-         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.props.showModal}>
+        <span key={this.props.rowData._id}>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.showModal}>
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
             </Modal>
@@ -196,6 +199,7 @@ const ControlledModal = React.createClass({
       );
     }
 });
+
 const CodeComponent = React.createClass({
 
   render() {
@@ -226,8 +230,6 @@ const CodeButton = React.createClass({
       ReactDOM.render(<CodeComponent showModal={true} rowData={this.props.rowData}/>, document.getElementById('code-component'));
     },
     render: function() {
-      //console.log("CodButton: render this=", this);
-
       return (
         <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> 
          <span id="code-component"/>
@@ -237,7 +239,6 @@ const CodeButton = React.createClass({
     },
     destroy() {
       console.log("CodeButton destroy, this=", this);
-      // ReactDOM.unmountComponentAtNode(document.fi);
     }
 });
 
