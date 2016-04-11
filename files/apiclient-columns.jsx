@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import polyfill from "es6-promise";
-import fetch from 'isomorphic-fetch';
 import Modal from 'react-modal';
 import {
   callRest
@@ -177,22 +175,12 @@ const ControlledModal = React.createClass({
     render() {
       return (
         <div>
-        <button onClick={this.open}>
-          Launch modal
-        </button>
-
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>{this.props.title}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>{this.props.body}{ this.props.children }</div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
+              <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
+              { this.props.children }
+            </Modal>
+            <span id="json-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
+        </div>
       );
     }
 });
@@ -200,7 +188,7 @@ const CodeComponent = React.createClass({
 
   render() {
     console.log("CodeComponent render, this=", this);
-    return (<ControlledModal title="Code"> <span>Code coming {this.props.rowData}</span> </ControlledModal>);
+    return (<ControlledModal title="Code"><span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
 
@@ -401,4 +389,32 @@ function SaveCollection(document) {
 export {
   ApimoonColumns as TableColumns, ColumnMeta as ColumnMeta, FormOptions as FormOptions,
   SaveCollection, DeleteObject
+};
+
+
+const CustomStyle = {
+  overlay: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(255, 255, 255, 0.75)'
+  },
+  content: {
+    zIndex: '255',
+    position: 'absolute',
+    top: '60px', // changed to 60px to get below the top menu
+    left: '40px',
+    right: '40px',
+    bottom: '40px',
+    border: '1px solid #ccc',
+    background: '#fff',
+    overflow: 'auto',
+    WebkitOverflowScrolling: 'touch',
+    borderRadius: '4px',
+    outline: 'none',
+    padding: '20px'
+
+  }
 };
