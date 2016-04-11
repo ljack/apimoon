@@ -216,9 +216,9 @@ const CodeComponent = React.createClass({
     };
     return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}>
     
-            <div class="col-md-4"> 
+            <div className="col-md-4"> 
               		<form  onSubmit={this.onSubmit}>
-        						<t.form.Form ref="form" type={FormSchema} options={FormOptions}  value={this.props.rowData}/>
+        						<t.form.Form ref="form" type={FormSchema()} options={FormOptions}  value={this.props.rowData}/>
         						<div className="form-group">
           							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
           							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
@@ -226,8 +226,8 @@ const CodeComponent = React.createClass({
         						</div>
       						</form>
             </div>
-            <div class="col-md-4"> </div>
-            <div class="col-md-4"> 
+            <div className="col-md-4"> </div>
+            <div className="col-md-4"> 
               {this.props.rowData.lastResult}
             </div>
               
