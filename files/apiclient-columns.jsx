@@ -183,14 +183,12 @@ const ControlledModal = React.createClass({
       console.log("componentWillMount, this=",this);
       this.setState({showModal:true});
     },
-    showModal() {
-      return this.state.showModal;
-    },
+ 
     render() {
       
       return (
         <span key={this.props.rowData._id}>
-         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.showModal()}>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
             </Modal>
@@ -203,7 +201,7 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
-    return (<ControlledModal title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
+    return (<ControlledModal key={this.props.rowData._id} title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
   }
 });
 
