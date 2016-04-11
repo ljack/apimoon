@@ -194,7 +194,7 @@ const ControlledModal = React.createClass({
     render() {
 
       return (
-        <span key={this.props.rowData._id}>
+        <span >
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
@@ -208,7 +208,7 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
-    return (<ControlledModal key={this.props.rowData._id} title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
+    return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
   }
 });
 
