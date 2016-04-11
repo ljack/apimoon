@@ -209,12 +209,24 @@ const ControlledModal = React.createClass({
 });
 
 const CodeComponent = React.createClass({
-
-  render() {
-    var options = {
-      lineNumbers: true
-    };
-    return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}>
+  getInitialState() {
+      return {
+        modalIsOpen: true
+      }
+    },
+    closeModal() {
+      this.setState({
+        modalIsOpen: false
+      });
+    },
+    run() {
+      
+    },
+    render() {
+      var options = {
+        lineNumbers: true
+      };
+      return (<ControlledModal  title="Code" showModal={this.state.modalIsOpen} rowData={this.props.rowData}>
     
             <div className="col-md-4"> 
               		<form  onSubmit={this.onSubmit}>
@@ -223,6 +235,7 @@ const CodeComponent = React.createClass({
           							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
           							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
           							<button onClick={this.deleteObject} className="btn btn-secondary DELETE_BUTTON_CLASS">Delete</button>
+          							<StartButton rowData={this.props.rowData}/>
         						</div>
       						</form>
             </div>
@@ -233,7 +246,7 @@ const CodeComponent = React.createClass({
               
               
             </ControlledModal>);
-  }
+    }
 });
 
 const CodeButton = React.createClass({
