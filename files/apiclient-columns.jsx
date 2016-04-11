@@ -150,7 +150,7 @@ const StartButton = React.createClass({
 const ControlledModal = React.createClass({
 
   getInitialState() {
-      console.log("getInitialState, this=",this);
+      console.log("getInitialState, this=", this);
       return {
         showModal: true
       };
@@ -162,14 +162,14 @@ const ControlledModal = React.createClass({
         showModal: true
       };
     },
-    
+
     close(evt) {
       evt.preventDefault();
       evt.stopPropagation();
       this.setState({
         showModal: false
       });
-      
+
     },
 
     open(evt) {
@@ -180,12 +180,18 @@ const ControlledModal = React.createClass({
       });
     },
     componentWillMount() {
-      console.log("componentWillMount, this=",this);
-      this.setState({showModal:true});
+      console.log("componentWillMount, this=", this);
+      this.setState({
+        showModal: true
+      });
     },
- 
+    componentWillReceiveProps: function(nextProps) {
+      this.setState({
+        showModal: nextProps.showModal
+      });
+    },
     render() {
-      
+
       return (
         <span key={this.props.rowData._id}>
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
