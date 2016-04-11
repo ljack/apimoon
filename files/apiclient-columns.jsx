@@ -400,7 +400,7 @@ const CodeFormOptions = {
       type: "text"
     },
     lastResult: {
-      type: "static",
+      type: "hidden",
       disabled: true
     }
   }
