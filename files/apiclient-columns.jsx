@@ -158,7 +158,8 @@ const ControlledModal = React.createClass({
     getDefaultProps: function() {
       return {
         title: 'default value',
-        body: "Content here"
+        body: "Content here",
+        showModal: true
       };
     },
     close(evt) {
@@ -167,6 +168,7 @@ const ControlledModal = React.createClass({
       this.setState({
         showModal: false
       });
+      this.props.showModal=false;
     },
 
     open(evt) {
@@ -175,16 +177,17 @@ const ControlledModal = React.createClass({
       this.setState({
         showModal: true
       });
+      this.props.showModal=true;
     },
     componentWillMount() {
       console.log("componentWillMount, this=",this);
       this.setState({showModal:true});
     },
     render() {
-      this.setState( {showModal: this.props.showModal || true});
+      
       return (
         <span>
-         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.props.showModal}>
               <button  className="btn btn-primary" onClick={this.close}>close</button>
               {this.props.children}
             </Modal>
@@ -220,10 +223,10 @@ const CodeButton = React.createClass({
     click(evt) {
       evt.preventDefault();
       evt.stopPropagation();
-      ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>, document.getElementById('code-component'));
+      ReactDOM.render(<CodeComponent showModal={true} rowData={this.props.rowData}/>, document.getElementById('code-component'));
     },
     render: function() {
-      console.log("CodButton: render this=", this);
+      //console.log("CodButton: render this=", this);
 
       return (
         <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> 
