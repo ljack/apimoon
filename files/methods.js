@@ -1,4 +1,7 @@
-import { Meteor } from 'meteor/meteor';
+import {
+    Meteor
+}
+from 'meteor/meteor';
 import {
     Apiclients
 }
@@ -18,15 +21,15 @@ export const callRest = new ValidatedMethod({
         console.log("callRest running "); //  rowData=", rowData);
 
         if (!this.isSimulation) {
-            if( !rowData.userAgent ) {
+            if (!rowData.userAgent) {
                 rowData.userAgent = "Apimoon Test App";
             }
             var options = {
-              headers: {
-                  "User-Agent": rowData.userAgent
-              }  
+                headers: {
+                    "User-Agent": rowData.userAgent
+                }
             };
-            var data = HTTP.call(rowData.method, rowData.url,options);
+            var data = HTTP.call(rowData.method, rowData.url, options);
             let id = rowData._id;
             let values = {};
             values.lastResult = JSON.stringify(data);
@@ -37,7 +40,7 @@ export const callRest = new ValidatedMethod({
             })
         }
 
-
+        console.log("callRest finished..")
         return "ok";
     }
 
