@@ -2345,7 +2345,7 @@
 			"npm": [
 				"phantomjs-prebuilt",
 				"isomorphic-fetch",
-				"es6-promise"
+				"node-rest-client"
 			],
 			"meteor": [
 				"mdg:validated-method",
