@@ -332,7 +332,7 @@ const NavigateButton = React.createClass( {
     evt.stopPropagation();
     console.log("trying to navigate to..");
     
-    FlowRouter.go("/apiclients_page/edit/", {apiclientId: this.props.rowData._id},{apiclientId: this.props.rowData._id});
+    FlowRouter.go("/apiclients_page/edit/"+this.props.rowData._id, {apiclientId: this.props.rowData._id} );
     
   },
   render() {
