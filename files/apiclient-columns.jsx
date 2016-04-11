@@ -218,7 +218,7 @@ const CodeComponent = React.createClass({
     
             <div className="col-md-4"> 
               		<form  onSubmit={this.onSubmit}>
-        						<t.form.Form ref="form" type={FormSchema()} options={FormOptions}  value={this.props.rowData}/>
+        						<t.form.Form ref="form" type={FormSchema()} options={CodeFormOptions}  value={this.props.rowData}/>
         						<div className="form-group">
           							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
           							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
@@ -389,6 +389,23 @@ const FormOptions = {
     }
   }
 };
+
+const CodeFormOptions = {
+  fields: {
+    _id: {
+      type: "static",
+      label: "ID"
+    },
+    name: {
+      type: "text"
+    },
+    lastResult: {
+      type: "static",
+      disabled: true
+    }
+  }
+};
+
 
 function DeleteObject(id) {
 
