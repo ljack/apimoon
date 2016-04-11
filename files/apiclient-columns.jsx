@@ -186,6 +186,7 @@ const ControlledModal = React.createClass({
       });
     },
     componentWillReceiveProps: function(nextProps) {
+      console.log("componentWillReceiveProps, nextProps=",nextProps);
       this.setState({
         showModal: nextProps.showModal
       });
