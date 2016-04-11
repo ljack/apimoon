@@ -12,12 +12,23 @@ from '/lib/collections/apiclients.js';
 export const callRest = new ValidatedMethod({
     name: 'apiclients.callRest',
     validate: () => {
-        console.log("validate");
+        console.log("callRest validate");
     },
     run(
         rowData
     ) {
         this.unblock();
+        var update = function(lastResult) {
+             let id = rowData._id;
+            let values = {};
+            values.lastResult = JSON.stringify(data);
+            Apiclients.update({
+                _id: id
+            }, {
+                $set: values
+            })
+        };
+        update( { status: "callRest running soon" });
         console.log("callRest running "); //  rowData=", rowData);
 
         if (!this.isSimulation) {
@@ -30,14 +41,7 @@ export const callRest = new ValidatedMethod({
                 }
             };
             var data = HTTP.call(rowData.method, rowData.url, options);
-            let id = rowData._id;
-            let values = {};
-            values.lastResult = JSON.stringify(data);
-            Apiclients.update({
-                _id: id
-            }, {
-                $set: values
-            })
+            update( data );
         }
 
         console.log("callRest finished..")
