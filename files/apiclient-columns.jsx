@@ -175,7 +175,7 @@ const ControlledModal = React.createClass({
     render() {
       return (
         <span>
-         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.showModal}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
               {this.props.children}
             </Modal>
