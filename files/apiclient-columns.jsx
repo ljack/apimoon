@@ -191,7 +191,7 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
-    return (<ControlledModal title="Code" showModal={true}><span>Code coming </span> </ControlledModal>);
+    return (<ControlledModal title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
   }
 });
 
