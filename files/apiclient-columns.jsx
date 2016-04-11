@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from 'react-modal';
+import Codemirror from 'react-codemirror';
+
 import {
   callRest
 }
@@ -209,7 +211,13 @@ const ControlledModal = React.createClass({
 const CodeComponent = React.createClass({
 
   render() {
-    return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}><span>Code coming </span> </ControlledModal>);
+    return (<ControlledModal  title="Code" showModal={true} rowData={this.props.rowData}>
+              <Codemirror value={this.props.rowData.left.code}/>
+              <Codemirror value={this.props.rowData.middle.code}/>
+              <Codemirror value={this.props.rowData.right.code}/>
+              
+              
+            </ControlledModal>);
   }
 });
 
