@@ -177,7 +177,7 @@ const ControlledModal = React.createClass({
         <span>
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.closeModal} isOpen={this.state.modalIsOpen}>
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
-              { this.props.children }
+              {this.props.children}
             </Modal>
             <span id="open-code-modal-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
         </span>
@@ -188,7 +188,7 @@ const CodeComponent = React.createClass({
 
   render() {
     //console.log("CodeComponent render, this=", this);
-    return (<ControlledModal title="Code" showModal={true}><span>Code coming {this.props.rowData}</span> </ControlledModal>);
+    return (<ControlledModal title="Code" showModal={true}><span>Code coming </span> </ControlledModal>);
   }
 });
 
