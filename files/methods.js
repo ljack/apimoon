@@ -40,8 +40,13 @@ export const callRest = new ValidatedMethod({
                     "User-Agent": rowData.userAgent
                 }
             };
+            try {
             var data = HTTP.call(rowData.method, rowData.url, options);
             update( data );
+            } catch(err) {
+                console.log(err);
+                update( { result: err});
+            }
         }
 
         console.log("callRest finished..")

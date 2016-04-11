@@ -252,7 +252,9 @@ const CodeComponent = React.createClass({
       console.log("onSubmit value=", value);
       if (value) {
         SaveCollection(value);
-        this.closeModal();
+        // add some sort nice alert message
+        console.log("saved")
+        // this.closeModal();
       }
       else {
         console.log("Validation error on form:");
