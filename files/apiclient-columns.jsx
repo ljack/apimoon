@@ -215,7 +215,7 @@ const CodeButton = React.createClass({
       ReactDOM.render(<CodeComponent rowData={this.props.rowData}/>, document.getElementById('code-component'));
     },
     render: function() {
-      console.log("CodeComponent: render this=", this);
+      console.log("CodButton: render this=", this);
 
       return (
         <span id="code-button" onClick={this.click} onMouseEnter={this.hover} onMouseLeave={this.mouseOut} ><i  className={this.state.hover} /> 
