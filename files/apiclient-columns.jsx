@@ -151,7 +151,7 @@ const ControlledModal = React.createClass({
 
   getInitialState() {
       return {
-        showModal: false
+        showModal: this.props.showModal || false
       };
     },
     getDefaultProps: function() {
@@ -179,7 +179,7 @@ const ControlledModal = React.createClass({
               <button  className="btn btn-primary" onClick={this.closeModal}>close</button>
               { this.props.children }
             </Modal>
-            <span id="json-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
+            <span id="open-code-modal-button" onClick={this.show} className={this.props.iconCss} title={this.props.title}></span>
         </div>
       );
     }
@@ -188,7 +188,7 @@ const CodeComponent = React.createClass({
 
   render() {
     console.log("CodeComponent render, this=", this);
-    return (<ControlledModal title="Code"><span>Code coming {this.props.rowData}</span> </ControlledModal>);
+    return (<ControlledModal title="Code" showModal={true}><span>Code coming {this.props.rowData}</span> </ControlledModal>);
   }
 });
 
@@ -201,7 +201,7 @@ const CodeButton = React.createClass({
     },
     hover() {
       this.setState({
-        hover: "fa fa-2x fa-code"
+        hover: "fa fa-lg fa-code"
       });
     },
     mouseOut() {
