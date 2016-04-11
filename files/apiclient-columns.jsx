@@ -160,13 +160,17 @@ const ControlledModal = React.createClass({
         body: "Content here"
       };
     },
-    close() {
+    close(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
       this.setState({
         showModal: false
       });
     },
 
-    open() {
+    open(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
       this.setState({
         showModal: true
       });
