@@ -30,9 +30,6 @@ export const callRest = new ValidatedMethod({
             let id = rowData._id;
             let values = {};
             values.lastResult = JSON.stringify(data);
-
-            console.log("id=" + id + " values=", values);
-            // console.log("Apiclients=", Apiclients);
             Apiclients.update({
                 _id: id
             }, {

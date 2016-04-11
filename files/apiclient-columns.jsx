@@ -241,7 +241,7 @@ const CodeComponent = React.createClass({
           							<button type="submit" className="btn btn-primary">Save</button> <nbsp/>
           							<button onClick={this.closeModal} className="btn btn-secondary">Cancel</button> <nbsp/>
           							<button onClick={this.deleteObject} className="btn btn-secondary DELETE_BUTTON_CLASS">Delete</button>
-          							<div class="btn-group" role="group"><StartButton rowData={this.props.rowData}/></div>
+          							<div className="btn-group" role="group"><StartButton rowData={this.props.rowData}/></div>
         						</div>
       						</form>
             </div>
