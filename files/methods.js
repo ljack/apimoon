@@ -21,8 +21,8 @@ export const callRest = new ValidatedMethod({
         var update = function(lastResult) {
             let id = rowData._id;
             let values = {};
-            values.lastResult = JSON.stringify(data);
-            console.log( "values=",values);
+            values.lastResult = JSON.stringify(lastResult);
+            // console.log( "values=",values);
             Apiclients.update({
                 _id: id
             }, {
