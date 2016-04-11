@@ -327,10 +327,15 @@ const CodeButton = React.createClass({
 });
 
 const NavigateButton = React.createClass( {
-  render() {
+  onClick(evt){
+    evt.preventDefault();
     console.log("trying to navigate to..");
+    
     FlowRouter.go("/apiclients_page/edit/", {apiclientId: this.props.rowData._id});
     
+  },
+  render() {
+      return (<button onClick={this.onClick} >GO</button>);
   }  
 } );
 
