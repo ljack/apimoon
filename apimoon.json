@@ -207,13 +207,13 @@
 						"show_in_read_only_form": true
 					}
 				],
+				"storage_adapters": [],
 				"owner_field": "",
+				"roles_allowed_to_read": [],
+				"roles_allowed_to_insert": [],
 				"roles_allowed_to_update": [],
 				"roles_allowed_to_delete": [],
 				"roles_allowed_to_download": [],
-				"storage_adapters": [],
-				"roles_allowed_to_read": [],
-				"roles_allowed_to_insert": [],
 				"before_insert_code": "",
 				"before_update_code": "",
 				"before_remove_code": "",
@@ -2425,10 +2425,6 @@
 			{
 				"source": "files/methods.js",
 				"dest": "BOTH_DIR/methods.js"
-			},
-			{
-				"source": "files/BOTH_COLLECTIONS_DIR/*",
-				"dest": "BOTH_COLLECTIONS_DIR/*"
 			}
 		],
 		"footer_text": "Check source code at GitHub: <a href=\"https://github.com/ljack/apimoon\">https://github.com/ljack/apimoon</a> and <a href=\"https://github.com/ljack/kitchen-templates/\">https://github.com/ljack/kitchen-templates/</a>",
