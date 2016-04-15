@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 export const ControlledModal = React.createClass({
 
   getInitialState() {
-      console.log("getInitialState, this=", this);
+      //console.log("getInitialState, this=", this);
       return {
         showModal: true
       };
