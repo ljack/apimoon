@@ -2380,7 +2380,7 @@
 			},
 			{
 				"source": "files/apimoon-columns.jsx",
-				"dest": "BOTH_COLLECTIONS_DIR/apimoon-columns.jsx"
+				"dest": "CLIENT_DIR/apimoon-columns.jsx"
 			},
 			{
 				"source": "files/schema-todo.js",
