@@ -14,6 +14,7 @@ export const ControlledModal = React.createClass({
     getDefaultProps: function() {
       return {
         title: 'default value',
+        closeTitle: "Close",
         body: "Content here",
         showModal: true
       };
@@ -53,7 +54,7 @@ export const ControlledModal = React.createClass({
       return (
         <span >
          <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
-              <button  className="btn btn-primary" onClick={this.close}>close</button>
+              <button  className="btn btn-primary" onClick={this.close}>{this.props.closeTitle}</button>
               {this.props.children}
             </Modal>
             <span id="open-code-modal-button" onClick={this.open} className={this.props.iconCss} title={this.props.title}></span>
