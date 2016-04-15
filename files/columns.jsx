@@ -2,6 +2,67 @@ import React from "react";
 import Pretty from '/lib/utils/pretty.jsx';
 import Modal from 'react-modal';
 
+
+export const ControlledModal = React.createClass({
+
+  getInitialState() {
+      console.log("getInitialState, this=", this);
+      return {
+        showModal: true
+      };
+    },
+    getDefaultProps: function() {
+      return {
+        title: 'default value',
+        body: "Content here",
+        showModal: true
+      };
+    },
+
+    close(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      this.setState({
+        showModal: false
+      });
+
+    },
+
+    open(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+      this.setState({
+        showModal: true
+      });
+    },
+    componentWillMount() {
+      console.log("componentWillMount, this=", this);
+      this.setState({
+        showModal: true
+      });
+    },
+    componentWillReceiveProps: function(nextProps) {
+      // https://facebook.github.io/react/docs/component-specs.html
+      console.log("componentWillReceiveProps, nextProps=", nextProps);
+      this.setState({
+        showModal: nextProps.showModal
+      });
+    },
+    render() {
+
+      return (
+        <span >
+         <Modal ref="modal" style={CustomStyle}  onRequestClose={this.close} isOpen={this.state.showModal}>
+              <button  className="btn btn-primary" onClick={this.close}>close</button>
+              {this.props.children}
+            </Modal>
+            <span id="open-code-modal-button" onClick={this.open} className={this.props.iconCss} title={this.props.title}></span>
+        </span>
+      );
+    }
+});
+
+
 // JSON 
 export const JsonComponent = React.createClass({
   getInitialState() {
