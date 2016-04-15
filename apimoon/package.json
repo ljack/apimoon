@@ -10,20 +10,20 @@
     "events": "^1.1.0",
     "griddle-react": "^0.4.1",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.7.0",
-    "meteor-node-stubs": "^0.2.1",
+    "lodash": "^4.11.1",
+    "meteor-node-stubs": "^0.2.3",
     "meteor-user-roles": "^1.0.6",
     "node-rest-client": "^1.8.0",
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.7",
-    "react": "^0.14.8",
-    "react-addons-pure-render-mixin": "^0.14.8",
+    "react": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.1",
     "react-codemirror": "^0.2.6",
-    "react-dom": "^0.14.8",
+    "react-dom": "^15.0.1",
     "react-highlight": "^0.7.0",
-    "react-modal": "^0.6.1",
-    "react-mounter": "^1.1.0",
+    "react-modal": "^1.1.1",
+    "react-mounter": "^1.2.0",
     "tcomb": "^3.0.0",
-    "tcomb-form": "^0.9.1"
+    "tcomb-form": "^0.9.3"
   }
 }
