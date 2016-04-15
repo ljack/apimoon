@@ -2425,6 +2425,10 @@
 			{
 				"source": "files/methods.js",
 				"dest": "BOTH_DIR/methods.js"
+			},
+			{
+				"source": "files/BOTH_COLLECTIONS_DIR/*",
+				"dest": "BOTH_COLLECTIONS_DIR/*"
 			}
 		],
 		"footer_text": "Check source code at GitHub: <a href=\"https://github.com/ljack/apimoon\">https://github.com/ljack/apimoon</a> and <a href=\"https://github.com/ljack/kitchen-templates/\">https://github.com/ljack/kitchen-templates/</a>",
