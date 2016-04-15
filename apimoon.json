@@ -2344,7 +2344,8 @@
 		"packages": {
 			"npm": [
 				"phantomjs-prebuilt",
-				"react-codemirror"
+				"react-codemirror",
+				"react-bootstrap"
 			],
 			"meteor": [
 				"mdg:validated-method",
