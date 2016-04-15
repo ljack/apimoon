@@ -2375,12 +2375,12 @@
 				"dest": "PRIVATE_DIR/right-code.js"
 			},
 			{
-				"source": "files/schema-apimoon.js",
-				"dest": "BOTH_COLLECTIONS_DIR/schema-apimoon.js"
+				"source": "files/apimoon-schema.js",
+				"dest": "BOTH_COLLECTIONS_DIR/apimoon-schema.js"
 			},
 			{
-				"source": "files/columns-apimoon.jsx",
-				"dest": "BOTH_COLLECTIONS_DIR/columns-apimoon.jsx"
+				"source": "files/apimoon-columns.jsx",
+				"dest": "BOTH_COLLECTIONS_DIR/apimoon-columns.jsx"
 			},
 			{
 				"source": "files/schema-todo.js",
