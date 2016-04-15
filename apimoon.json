@@ -1741,8 +1741,8 @@
 						}
 					],
 					"imports": [
-						"import FormSchema from '/lib/collections/schema-apimoon.js';",
-						"import {TableColumns, ColumnMeta,FormOptions,SaveCollection,DeleteObject} from '/lib/collections/columns-apimoon.jsx';"
+						"import FormSchema from '/lib/collections/apimoon-schema.js';",
+						"import {TableColumns, ColumnMeta,FormOptions,SaveCollection,DeleteObject} from '/lib/collections/apimoon-columns.jsx';"
 					],
 					"template": "",
 					"custom_template": "",
