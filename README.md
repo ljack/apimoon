@@ -1,3 +1,23 @@
+# apimoon
+API gateway/proxy. Register your API endpoint, configure access and publish it through the proxy. Comes with mock and load-balancing. 
+
+
+
+- Eats JSON delivered different ways:
+- HTTP
+- DDP
+- Sandbox in the middle where with javascript can do mappings from format x to format
+- Provides JSON through HTTP
+- Also implements GraphQL Server / Client
+
+
+# Read the highlevel doc
+ https://docs.google.com/document/d/141UD-nxg2nxL-dxCG0ijBgZZAyBXhQw5vrSPhPz5o1E/pub
+ (coming to MD format soon)
+
+--
+Below is a side project which is React dataview component for Meteorkitchen. 
+
 # Dataview-type component in React for MK
 Demo app URL https://apimoon-ljack1.c9users.io/
 
@@ -32,18 +52,3 @@ Note that actually the apimoons_page.jsx and pagetodos.jsx contains all the func
 1. Create UI for selecting user in Todos.owner and Todos.sharedTo
 
 
-Below is readme for the actual APimoon app.
-# apimoon
-API gateway/proxy. Register your API endpoint, configure access and publish it through the proxy. Comes with mock and load-balancing. 
-
-- Eats JSON delivered different ways:
-- HTTP
-- DDP
-- Sandbox in the middle where with javascript can do mappings from format x to format
-- Provides JSON through HTTP
-- Also implements GraphQL Server / Client
-
-
-# Read the highlevel doc
- https://docs.google.com/document/d/141UD-nxg2nxL-dxCG0ijBgZZAyBXhQw5vrSPhPz5o1E/pub
- (coming to MD format soon)
