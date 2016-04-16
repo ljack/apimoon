@@ -1,8 +1,8 @@
 # apimoon
 API gateway/proxy. Register your API endpoint, configure access and publish it through the proxy. Comes with mock and load-balancing. 
 
-!(Apimoon-MyApimoon-code-editors.png?raw=true "Screenshot")
-
+!( "Screenshot")
+![Alt text](Apimoon-MyApimoon-code-editors.png?raw=true "Optional Title")
 
 - Eats JSON delivered different ways:
 - HTTP
