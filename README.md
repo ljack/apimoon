@@ -52,3 +52,6 @@ Note that actually the apimoons_page.jsx and pagetodos.jsx contains all the func
 1. Create UI for selecting user in Todos.owner and Todos.sharedTo
 
 
+# 2017 Update
+  Rewrite in progress, so stay tuned.
+
